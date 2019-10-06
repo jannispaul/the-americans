@@ -16,8 +16,9 @@ export default () => (
               slug
               image {
                 sizes(maxWidth: 800) {
-                  ...GatsbyContentfulSizes
+                  ...GatsbyContentfulSizes_withWebp
                 }
+                description
               }
               description {
                 description

@@ -24,7 +24,7 @@ const EpisodeLink = props => (
     <SmallLabel>{props.date}</SmallLabel>
     <h3>{props.title}</h3>
     <p>{props.body}</p>
-    <Img sizes={props.image.sizes} />
+    <Img sizes={props.image.sizes} alt={props.image.description} />
 
     {/* <p>{node.frontmatter.podcastUrl}</p> */}
   </StyledLink>

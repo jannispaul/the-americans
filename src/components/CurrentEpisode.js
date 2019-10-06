@@ -5,6 +5,7 @@ import PodigeePlayer from "./PodigeePlayer"
 // import styles from './news.module.css'
 // import Icon from './icon'
 // import { ICONS } from '../constants/icons.js'
+import Img from "gatsby-image"
 
 export default () => (
   <StaticQuery
@@ -20,6 +21,12 @@ export default () => (
               id
               slug
               updatedAt(formatString: "DD. MMMM YYYY", locale: "de-DE")
+              image {
+                sizes(maxWidth: 800) {
+                  ...GatsbyContentfulSizes_withWebp
+                }
+                description
+              }
             }
           }
         }
@@ -43,6 +50,7 @@ export default () => (
                   width="100%"
                   title="podcast"
                 ></iframe> */}
+                <Img sizes={node.image.sizes} alt={node.image.description} />
 
                 <PodigeePlayer theme="minimal"></PodigeePlayer>
                 {/* <div id="app"></div> */}

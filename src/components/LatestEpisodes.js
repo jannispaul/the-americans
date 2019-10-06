@@ -32,7 +32,7 @@ export default () => (
               updatedAt(formatString: "DD. MMMM YYYY", locale: "de-DE")
               image {
                 sizes(maxWidth: 800) {
-                  ...GatsbyContentfulSizes
+                  ...GatsbyContentfulSizes_withWebp
                 }
               }
             }
