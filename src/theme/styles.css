@@ -1,0 +1,25 @@
+/*Browser Reset*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: initial;
+  /* scroll-behavior:smooth; */
+}
+
+body {
+  height: 100%;
+  white-space: pre-line;
+}
+iframe {
+  border: none;
+}
+
+@media (min-width: 376px) {
+  body {
+    user-select: auto;
+  }
+}

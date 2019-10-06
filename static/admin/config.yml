@@ -1,0 +1,31 @@
+backend:
+  name: github
+  repo: jannispaul/the-americans
+
+media_folder: static/assets
+public_folder: assets
+
+collections:
+  - name: episodes
+    label: Episode
+    folder: src/content/episodes
+    create: true
+    fields:
+      - { name: title, label: Titel }
+      - { name: date, label: Datum, widget: date }
+      - { name: podcastUrl, label: Podcast-URL, widget: string }
+      - { name: body, label: Nachricht, widget: markdown }
+  # - name: times
+  #   label: Öffnungszeiten
+  #   files:
+  #     - label: Öffnungszeiten
+  #       name: times
+  #       file: content/times/times.md
+  #       fields:
+  #         - { name: path, label: Path, widget: string, default: times }
+  #         - { name: monday, label: Montag, widget: text }
+  #         - { name: tuesday, label: Dienstag, widget: text }
+  #         - { name: wednesday, label: Mittwoch, widget: text }
+  #         - { name: thursday, label: Donnerstag, widget: text }
+  #         - { name: friday, label: Freitag, widget: text }
+  #         - { name: body, label: Nachricht, widget: markdown }
