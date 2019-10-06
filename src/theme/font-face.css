@@ -1,0 +1,142 @@
+/* latin-ext */
+@font-face {
+  font-family: "Playfair Display";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Playfair Display Regular"), local("PlayfairDisplay-Regular"),
+    url("/fonts/PlayfairDisplay-Regular.woff2") format("woff2");
+}
+/* latin-ext */
+@font-face {
+  font-family: "Source Sans Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: local("Source Sans Pro Regular"), local("SourceSansPro-Regular"),
+    url("/fonts/SourceSansPro-Regular.woff2") format("woff2");
+}
+/* latin-ext */
+@font-face {
+  font-family: "Source Sans Pro";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: local("Source Sans Pro Semibold"), local("SourceSansPro-Semibold"),
+    url("/fonts/SourceSansPro-Semibold.woff2") format("woff2");
+}
+
+body {
+  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, Arial,
+    sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  font-size: 18px;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Playfair Display";
+  color: #141936;
+  line-height: 1.2;
+  font-weight: 400;
+}
+h1 {
+  font-size: 40px;
+  margin-bottom: 25px;
+  /* font-weight: 600; */
+}
+h2 {
+  font-size: 40px;
+  margin-bottom: 25px;
+}
+h3 {
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+h4 {
+  font-size: 24px;
+  /* font-weight: 500; */
+}
+small {
+  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, Arial,
+    sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+  font-size: 10px;
+}
+
+ul {
+  list-style: none;
+}
+/*Make links break and not overflow*/
+a {
+  overflow-wrap: break-word;
+  /* word-break: break-all; */
+}
+
+p,
+li,
+td,
+label {
+  line-height: var(--line-height);
+  color: var(--color-dark);
+}
+
+p {
+  line-height: 1.6;
+  font-weight: 300;
+  color: #4b4d58;
+  letter-spacing: 0.4px;
+}
+
+a {
+  color: var(--color-primary-dark);
+}
+
+/* Small Screens */
+@media (min-width: 375px) {
+}
+/* Tablets */
+@media (min-width: 768px) {
+}
+/* Laptop */
+@media (min-width: 1024px) {
+  body {
+    font-size: 22px;
+  }
+  h1 {
+    font-size: 64px;
+    margin-bottom: 25px;
+    /* font-weight: 600; */
+  }
+  h2 {
+    font-size: 64px;
+    margin-bottom: 25px;
+  }
+  h3 {
+    font-size: 32px;
+    margin-bottom: 12px;
+  }
+  h4 {
+    font-size: 32px;
+    /* font-weight: 500; */
+  }
+
+  small {
+    font-family: "Source Sans Pro";
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+    font-size: 10px;
+  }
+}
+/* Desktop */
+@media (min-width: 2560px) {
+}
