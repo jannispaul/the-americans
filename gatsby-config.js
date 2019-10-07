@@ -21,6 +21,7 @@ module.exports = {
     title: `The Americans`,
     description: `Lorem ipsum`,
     author: `Media Pioneer`,
+    // siteUrl: `localhost`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

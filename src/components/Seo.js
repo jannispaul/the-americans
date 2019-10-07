@@ -9,8 +9,9 @@ import React from "react"
 import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
+import defaultOpenGraphImage from "../content/images/gatsby-astronaut.png"
 
-function SEO({ description, lang, meta, keywords, title, index }) {
+function SEO({ description, lang, meta, keywords, title, index, ogimage }) {
   const { site } = useStaticQuery(
     graphql`
       query SeoQuery {
@@ -26,6 +27,9 @@ function SEO({ description, lang, meta, keywords, title, index }) {
   )
 
   const metaDescription = description || site.siteMetadata.description
+  const ogImageUrl = ogimage || defaultOpenGraphImage
+  // const ogImageUrl =
+  //   site.siteMetadata.siteUrl + (ogimage || defaultOpenGraphImage)
 
   return (
     <Helmet
@@ -73,15 +77,15 @@ function SEO({ description, lang, meta, keywords, title, index }) {
         },
         {
           name: `twitter:image`,
-          content: site.siteMetadata.image,
+          content: ogImageUrl,
         },
         {
           property: `og:image`,
-          content: site.siteMetadata.image,
+          content: ogImageUrl,
         },
         {
           itemprop: `image`,
-          content: site.siteMetadata.image,
+          content: ogImageUrl,
         },
       ]
         .concat(
