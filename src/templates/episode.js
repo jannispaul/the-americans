@@ -10,6 +10,7 @@ import ProviderLogos from "../components/ProviderLogos"
 import episodecurve from "../content/images/curves/episode-curve.svg"
 import PodigeePlayer from "../components/PodigeePlayer"
 import Img from "gatsby-image"
+import SEO from "../components/Seo"
 
 // const StyledImage = styled(Img)`
 //   width: 100%;
@@ -59,13 +60,14 @@ class Episode extends Component {
 
     return (
       <Layout logocolor="#69d9c2">
+        <SEO title={title} ogimage={image.resize.src} />
         <StyledHero>
           <ContentContainer>
             <SmallLabel color="white">{updatedAt}</SmallLabel>
             <h1>{title}</h1>
             {/* <div dangerouslySetInnerHTML={{ __html: description }} /> */}
             <PodigeePlayer theme="default-dark"></PodigeePlayer>
-            <Img sizes={image.sizes} />
+            <Img sizes={image.sizes} alt={image.description} />
             <p>{description.description}</p>
           </ContentContainer>
           <Curvecontainer></Curvecontainer>
@@ -85,7 +87,7 @@ Episode.propTypes = {
 export default Episode
 
 export const query = graphql`
-  query episodetQuery($slug: String!) {
+  query singleEpisodeQuery($slug: String!) {
     contentfulPodcast(slug: { eq: $slug }) {
       description {
         description
@@ -97,6 +99,10 @@ export const query = graphql`
       image {
         sizes(maxWidth: 800) {
           ...GatsbyContentfulSizes_withWebp
+        }
+        description
+        resize(width: 900, quality: 90) {
+          src
         }
       }
     }
