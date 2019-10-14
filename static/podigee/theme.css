@@ -1,4 +1,4 @@
-@font-face {
+/* @font-face {
   font-family: 'Podlove';
   src: url("../fonts/podlove/Podlove.eot");
   src: url("../fonts/podlove/Podlove.eot?#iefix") format("embedded-opentype"), url("../fonts/podlove/Podlove.woff") format("woff"), url("../fonts/podlove/Podlove.ttf") format("truetype"), url("../fonts/podlove/Podlove.svg#robotomedium") format("svg");
@@ -551,4 +551,19 @@ script.podlove-subscribe-button {
     overflow: hidden;
     width: 1px; }
 
-/*# sourceMappingURL=app.css.map */
+# sourceMappingURL=app.css.map */
+
+.podcast-player .panels .chaptermarks ul li.active,
+.podcast-player .panels .chaptermarks ul li:hover,
+.podcast-player .panels .playlist ul li.active,
+.podcast-player .panels .playlist ul li:hover {
+  color: #1b1b1b;
+}
+.podcast-player .panels .share .share-copy-url {
+  color: #c8c8c8;
+}
+.podcast-player .panels .transcript .transcript-text li:hover > *,
+.podcast-player .panels .transcript .transcript-text li.active > *,
+.podcast-player .panels .transcript .transcript-text li.search-highlight > * {
+  color: #1b1b1b;
+}

@@ -20,6 +20,7 @@ export default () => (
               title
               id
               slug
+              podcastSlug
               updatedAt(formatString: "DD. MMMM YYYY", locale: "de-DE")
               image {
                 sizes(maxWidth: 800) {
@@ -43,16 +44,12 @@ export default () => (
                 <p>{node.description.description}</p>
                 {/* <p>{node.frontmatter.podcastUrl}</p> */}
                 <br />
-                {/* <iframe
-                  src="https://testing.podigee.io/1-neue-episode/embed?context=external&theme=default"
-                  border="0"
-                  height="100"
-                  width="100%"
-                  title="podcast"
-                ></iframe> */}
                 <Img sizes={node.image.sizes} alt={node.image.description} />
 
-                <PodigeePlayer theme="minimal"></PodigeePlayer>
+                <PodigeePlayer
+                  theme="minimal"
+                  source={node.podcastSlug}
+                ></PodigeePlayer>
                 {/* <div id="app"></div> */}
               </div>
             </div>
