@@ -56,6 +56,7 @@ class Episode extends Component {
       updatedAt,
       description,
       image,
+      podcastSlug,
     } = this.props.data.contentfulPodcast
 
     return (
@@ -66,7 +67,10 @@ class Episode extends Component {
             <SmallLabel color="white">{updatedAt}</SmallLabel>
             <h1>{title}</h1>
             {/* <div dangerouslySetInnerHTML={{ __html: description }} /> */}
-            <PodigeePlayer theme="default-dark"></PodigeePlayer>
+            <PodigeePlayer
+              theme="default-dark"
+              source={podcastSlug}
+            ></PodigeePlayer>
             <Img sizes={image.sizes} alt={image.description} />
             <p>{description.description}</p>
           </ContentContainer>
@@ -95,6 +99,7 @@ export const query = graphql`
       title
       id
       slug
+      podcastSlug
       updatedAt(formatString: "DD. MMMM YYYY", locale: "de-DE")
       image {
         sizes(maxWidth: 800) {
