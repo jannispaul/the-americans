@@ -1,108 +1,21 @@
-import React, { Component } from "react"
+import React from "react"
 import { graphql } from "gatsby"
-import propTypes from "prop-types"
-
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
+import { BLOCKS } from "@contentful/rich-text-types"
 import Layout from "../components/Layout"
-import styled from "styled-components"
-import SmallLabel from "../components/SmallLabel"
-import LatestEpisodes from "../components/LatestEpisodes"
-import ProviderLogos from "../components/ProviderLogos"
-import episodecurve from "../content/images/curves/episode-curve.svg"
+
 import PodigeePlayer from "../components/PodigeePlayer"
 import Img from "gatsby-image"
 import SEO from "../components/Seo"
 
-// const StyledImage = styled(Img)`
-//   width: 100%;
-//   height: 200px;
-//   background: gray;
-//   overflow: hidden;
-// `
-
-const StyledHero = styled.section`
-  padding: 100px 0;
-  position: relative;
-  background: #ff8370;
-  margin-bottom: 10vw;
-`
-const Curvecontainer = styled.div`
-  position: absolute;
-  bottom: 0;
-  margin-bottom: -5vw;
-  background: url(${episodecurve});
-  background-size: 100% 100%;
-  width: 100%;
-  height: 5vw;
-`
-const ContentContainer = styled.div`
-  margin-left: auto;
-  margin-right: auto;
-  position: relative;
-  max-width: 700px;
-  text-align: center;
-  padding: 20px;
-`
-const LogoContainer = styled.div`
-  max-width: 1020px;
-  padding: 20px;
-  margin: 100px auto;
-`
-
-class Episode extends Component {
-  render() {
-    console.log(this.props)
-    const {
-      title,
-      updatedAt,
-      description,
-      image,
-      podcastSlug,
-    } = this.props.data.contentfulPodcast
-
-    return (
-      <Layout logocolor="#69d9c2">
-        <SEO title={title} ogimage={image.resize.src} />
-        <StyledHero>
-          <ContentContainer>
-            <SmallLabel color="white">{updatedAt}</SmallLabel>
-            <h1>{title}</h1>
-            {/* <div dangerouslySetInnerHTML={{ __html: description }} /> */}
-            <PodigeePlayer
-              theme="default-dark"
-              source={podcastSlug}
-            ></PodigeePlayer>
-            <Img sizes={image.sizes} alt={image.description} />
-            <p>{description.description}</p>
-          </ContentContainer>
-          <Curvecontainer></Curvecontainer>
-        </StyledHero>
-        <LatestEpisodes></LatestEpisodes>
-        <LogoContainer>
-          <ProviderLogos></ProviderLogos>
-        </LogoContainer>
-      </Layout>
-    )
-  }
-}
-Episode.propTypes = {
-  data: propTypes.object.isRequired,
-}
-
-export default Episode
-
 export const query = graphql`
-  query singleEpisodeQuery($slug: String!) {
-    contentfulPodcast(slug: { eq: $slug }) {
-      description {
-        description
+  query($slug: String!) {
+    podcast: contentfulPodcast(slug: { eq: $slug }) {
+      body {
+        json
       }
-      title
-      id
-      slug
-      podcastSlug
-      updatedAt(formatString: "DD. MMMM YYYY", locale: "de-DE")
       image {
-        sizes(maxWidth: 800) {
+        sizes(maxWidth: 1000) {
           ...GatsbyContentfulSizes_withWebp
         }
         description
@@ -110,6 +23,126 @@ export const query = graphql`
           src
         }
       }
+      title
+      slug
+      podcastSlug
+      createdAt
     }
   }
 `
+const richTextImageWidth = 1000
+const richTextImageQuality = 20
+
+const EpisodeTemplate = ({ data: { podcast } }) => (
+  <Layout logocolor="#69d9c2">
+    <SEO title={podcast.title} ogimage={podcast.image.resize.src} />
+    <Img sizes={podcast.image.sizes} alt={podcast.image.description} />
+
+    <h1>{podcast.title}</h1>
+    <p>{podcast.createdAt}</p>
+    <PodigeePlayer
+      theme="default-dark"
+      source={podcast.podcastSlug}
+    ></PodigeePlayer>
+    <div>
+      {documentToReactComponents(podcast.body.json, {
+        renderNode: {
+          [BLOCKS.EMBEDDED_ASSET]: (node, children) => (
+            <div>
+              {/* <img
+                  src={`${node.data.target.fields.file["de"].url}?w=200`}
+                  alt={node.data.target.fields.title["de"]}
+                /> */}
+
+              <figure>
+                <Img
+                  alt={node.data.target.fields.title["de"]}
+                  sizes={{
+                    aspectRatio:
+                      node.data.target.fields.file["de"].details.image.width /
+                      node.data.target.fields.file["de"].details.image.height,
+                    src:
+                      `${node.data.target.fields.file["de"].url}?w=${richTextImageWidth}&fm=webp&q=${richTextImageQuality}` +
+                      ",\n",
+                    sizes: `(max-width: ${richTextImageWidth}px) 100vw, ${richTextImageWidth}px`,
+                    srcSet:
+                      `${
+                        node.data.target.fields.file["de"].url
+                      }?w=${richTextImageWidth /
+                        4}&fm=jpg&q=${richTextImageQuality}` +
+                      ` ${richTextImageWidth / 4}w,\n` +
+                      `${
+                        node.data.target.fields.file["de"].url
+                      }?w=${richTextImageWidth /
+                        2}&fm=jpg&q=${richTextImageQuality}` +
+                      ` ${richTextImageWidth / 2}w,\n` +
+                      `${node.data.target.fields.file["de"].url}?w=${richTextImageWidth}&fm=jpg&q=${richTextImageQuality}` +
+                      ` ${richTextImageWidth}w,\n` +
+                      `${
+                        node.data.target.fields.file["de"].url
+                      }?w=${richTextImageWidth *
+                        1.5}&fm=jpg&q=${richTextImageQuality}` +
+                      ` ${richTextImageWidth * 1.5}w,\n` +
+                      `${
+                        node.data.target.fields.file["de"].url
+                      }?w=${richTextImageWidth *
+                        2}&fm=jpg&q=${richTextImageQuality}` +
+                      ` ${richTextImageWidth * 2}w,\n` +
+                      `${
+                        node.data.target.fields.file["de"].url
+                      }?w=${richTextImageWidth *
+                        3}&fm=jpg&q=${richTextImageQuality}` +
+                      ` ${richTextImageWidth * 3}w,\n` +
+                      `${
+                        node.data.target.fields.file["de"].url
+                      }?w=${richTextImageWidth *
+                        3.992}&fm=jpg&q=${richTextImageQuality}` +
+                      ` ${richTextImageWidth * 3.992}w`,
+                    srcSetWebp:
+                      `${
+                        node.data.target.fields.file["de"].url
+                      }?w=${richTextImageWidth /
+                        4}&fm=webp&q=${richTextImageQuality}` +
+                      ` ${richTextImageWidth / 4}w,\n` +
+                      `${
+                        node.data.target.fields.file["de"].url
+                      }?w=${richTextImageWidth /
+                        2}&fm=webp&q=${richTextImageQuality}` +
+                      ` ${richTextImageWidth / 2}w,\n` +
+                      `${node.data.target.fields.file["de"].url}?w=${richTextImageWidth}&fm=webp&q=${richTextImageQuality}` +
+                      ` ${richTextImageWidth}w,\n` +
+                      `${
+                        node.data.target.fields.file["de"].url
+                      }?w=${richTextImageWidth *
+                        1.5}&fm=webp&q=${richTextImageQuality}` +
+                      ` ${richTextImageWidth * 1.5}w,\n` +
+                      `${
+                        node.data.target.fields.file["de"].url
+                      }?w=${richTextImageWidth *
+                        2}&fm=webp&q=${richTextImageQuality}` +
+                      ` ${richTextImageWidth * 2}w,\n` +
+                      `${
+                        node.data.target.fields.file["de"].url
+                      }?w=${richTextImageWidth *
+                        3}&fm=webp&q=${richTextImageQuality}` +
+                      ` ${richTextImageWidth * 3}w,\n` +
+                      `${
+                        node.data.target.fields.file["de"].url
+                      }?w=${richTextImageWidth *
+                        3.992}&fm=webp&q=${richTextImageQuality}` +
+                      ` ${richTextImageWidth * 3.992}w`,
+                  }}
+                />
+                <figcaption>
+                  {node.data.target.fields.description["de"]}
+                </figcaption>
+              </figure>
+            </div>
+          ),
+        },
+      })}
+    </div>
+  </Layout>
+)
+
+export default EpisodeTemplate
