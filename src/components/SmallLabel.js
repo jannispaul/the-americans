@@ -3,7 +3,10 @@ import styled from "styled-components"
 
 const StyledSmall = styled.small`
   color: ${props => props.color || "#e6270a"};
-  margin-bottom: 16px;
+  margin-bottom: 8px;
+  font-family: "AmericanTypewriter";
+  color: #575757;
+  letter-spacing: 1.33px;
 `
 
 const SmallLable = props => (

@@ -13,6 +13,7 @@ html {
 body {
   height: 100%;
   white-space: pre-line;
+  word-break: break-word;
 }
 iframe {
   border: none;

@@ -27,37 +27,39 @@
 }
 
 body {
-  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, Arial,
-    sans-serif;
+  font-family: Avenir, -apple-system, BlinkMacSystemFont, Arial, sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   font-size: 18px;
   font-weight: 300;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  /* -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; */
 }
 
 h1,
 h2,
 h3,
 h4 {
-  font-family: "Playfair Display";
-  color: #141936;
+  font-family: AmericanTypewriter-CondensedBold;
   line-height: 1.2;
   font-weight: 400;
 }
 h1 {
-  font-size: 40px;
-  margin-bottom: 25px;
-  /* font-weight: 600; */
+  font-size: 32px;
+  /* margin-bottom: 25px; */
+  color: #ff0045;
 }
 h2 {
-  font-size: 40px;
-  margin-bottom: 25px;
+  font-size: 32px;
+  /* margin-bottom: 25px; */
+  color: #ff0045;
 }
 h3 {
-  font-size: 24px;
-  margin-bottom: 12px;
+  font-size: 26px;
+  /* margin-bottom: 12px; */
+  color: #000000;
+  text-align: left;
+  margin-bottom: 16px;
 }
 h4 {
   font-size: 24px;
@@ -85,19 +87,19 @@ p,
 li,
 td,
 label {
-  line-height: var(--line-height);
-  color: var(--color-dark);
+  line-height: 1.63;
+  color: #2c2c2c;
 }
 
 p {
   line-height: 1.6;
   font-weight: 300;
-  color: #4b4d58;
+  color: #2c2c2c;
   letter-spacing: 0.4px;
 }
 
 a {
-  color: var(--color-primary-dark);
+  color: inherit;
 }
 
 /* Small Screens */
@@ -117,7 +119,7 @@ a {
     /* font-weight: 600; */
   }
   h2 {
-    font-size: 64px;
+    font-size: 46px;
     margin-bottom: 25px;
   }
   h3 {

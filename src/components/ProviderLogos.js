@@ -1,22 +1,27 @@
 import React from "react"
 import styled from "styled-components"
-// import { Link } from "gatsby"
 import spotify from "../content/images/providers/spotify.svg"
 import apple from "../content/images/providers/apple.svg"
-import google from "../content/images/providers/google.svg"
-import podcasting from "../content/images/providers/podcasting.svg"
+import overcast from "../content/images/providers/overcast.svg"
+import earliaudio from "../content/images/providers/earliaudio.png"
 import soundcloud from "../content/images/providers/soundcloud.svg"
 import deezer from "../content/images/providers/deezer.svg"
+import { device } from "../theme/breakpoints"
 
 const StyledLogos = styled.div`
+  margin-top: 32px;
+  margin-bottom: 32px;
+  width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 150px));
-  grid-gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-gap: 10px;
   justify-content: center;
+  @media ${device.tablet} {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
 
   & > a {
-    height: 80px;
-    /* width: 150px; */
+    height: 60px;
     background: white;
     border-radius: 5px;
     box-shadow: 0 1px 14px 10px rgba(174, 174, 174, 0.12);
@@ -31,26 +36,29 @@ const StyledLogos = styled.div`
     }
   }
 `
+const StyledImage = styled.img`
+  width: 34px;
+`
 
 const ProviderLogos = props => (
   <StyledLogos>
     <a href="/#">
-      <img src={spotify} alt="spotify logo"></img>
-    </a>
-    <a href="/#">
       <img src={apple} alt="apple logo"></img>
     </a>
     <a href="/#">
-      <img src={google} alt="google logo"></img>
+      <img src={spotify} alt="spotify logo"></img>
     </a>
     <a href="/#">
-      <img src={podcasting} alt="podcasting logo"></img>
+      <img src={deezer} alt="deezer logo"></img>
+    </a>
+    <a href="/#">
+      <StyledImage src={earliaudio} alt="earliaudio logo"></StyledImage>
     </a>
     <a href="/#">
       <img src={soundcloud} alt="soundcloud logo"></img>
     </a>
     <a href="/#">
-      <img src={deezer} alt="deezer logo"></img>
+      <img src={overcast} alt="overcast logo"></img>
     </a>
   </StyledLogos>
 )

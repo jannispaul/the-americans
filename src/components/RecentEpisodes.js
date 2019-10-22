@@ -2,19 +2,33 @@ import React from "react"
 import { StaticQuery, graphql } from "gatsby"
 import EpisodeLink from "./EpisodeLink"
 import styled from "styled-components"
-import SmallLable from "./SmallLabel"
+import headlineBG from "../content/images/headline-bg.png"
+
 import Button from "./Button"
 
-const StyledLatestEpisodes = styled.section`
-  display: flex;
+const StyledRecentEpisodes = styled.section`
+  /* display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
+  text-align: center; */
+  padding: 0 16px;
+  position: relative;
 `
-const StyledIntro = styled.div`
+const Styledh2 = styled.h2`
+  color: #7000c0;
+  position: relative;
   margin: auto;
+  display: flex;
+  flex-direction: column;
   padding: 20px;
-  max-width: 700px;
+  text-align: center;
+  & img {
+    /* position: absolute;
+    top: 15px; */
+    width: 501px;
+    max-width: 100%;
+    margin-top: -32px;
+  }
 `
 
 export default () => (
@@ -41,25 +55,25 @@ export default () => (
       }
     `}
     render={data => (
-      <StyledLatestEpisodes>
-        <StyledIntro>
-          <SmallLable>Noch nicht genug?</SmallLable>
-          <h2>Letzte Episoden</h2>
-        </StyledIntro>
+      <StyledRecentEpisodes>
+        <Styledh2>
+          Recent Episodes
+          <img src={headlineBG} alt="Airplanes flying away from headline" />
+        </Styledh2>
         {data.allContentfulPodcast.edges.map(({ node }) => (
           <EpisodeLink
             key={node.id}
             slug={node.slug}
             date={node.updatedAt}
             title={node.title}
-            body={node.description.description}
+            excerpt={node.description.description.substring(0, 100) + " ..."}
             image={node.image}
           ></EpisodeLink>
         ))}
         <br />
-        <Button to="/alle-episoden/">Alle Episoden</Button>
+        <Button to="/alle-episoden/">All Episodes</Button>
         <br />
-      </StyledLatestEpisodes>
+      </StyledRecentEpisodes>
     )}
   />
 )

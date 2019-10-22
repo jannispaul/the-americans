@@ -6,6 +6,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import "../theme/font-face.css"
 import "../theme/styles.css"
 
+import MPPresents from "./MPPresents"
 import Navigation from "./Navigation"
 import Footer from "./Footer"
 
@@ -22,10 +23,8 @@ const Layout = props => {
 
   return (
     <div>
-      <Navigation
-        siteTitle={data.site.siteMetadata.title}
-        logocolor={props.logocolor}
-      />
+      <MPPresents></MPPresents>
+      <Navigation siteTitle={data.site.siteMetadata.title} />
       <main>{props.children}</main>
       <Footer></Footer>
     </div>

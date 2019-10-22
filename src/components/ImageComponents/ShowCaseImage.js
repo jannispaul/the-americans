@@ -2,6 +2,8 @@ import React from "react"
 import { StaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import styled from "styled-components"
+import { device } from "../../theme/breakpoints"
+
 /**
  * This component is built using `gatsby-background-image` to automatically
  * serve optimized background-images with lazy loading and reduced file sizes
@@ -17,14 +19,24 @@ import styled from "styled-components"
  */
 
 const StyledImage = styled(Img)`
-  height: 100%;
+  margin-left: -15vw;
+
+  @media ${device.tablet} {
+    margin-left: -10vw;
+    grid-column: 1/3;
+    /* position: absolute !important; */
+    /* width: 70%;
+    z-index: 0;
+    top: 0;
+    left: 0; */
+  }
 `
 
-const Image = () => (
+const ShowCaseImage = () => (
   <StaticQuery
     query={graphql`
-      query heroImageQuery {
-        heroImage: file(relativePath: { eq: "hero.jpg" }) {
+      query {
+        showCaseImage: file(relativePath: { eq: "showcase.png" }) {
           childImageSharp {
             fluid(maxWidth: 1200) {
               ...GatsbyImageSharpFluid_withWebp_noBase64
@@ -34,9 +46,15 @@ const Image = () => (
       }
     `}
     render={data => {
-      const image = data.heroImage.childImageSharp
-      return <StyledImage fluid={image.fluid} />
+      const image = data.showCaseImage.childImageSharp
+      return (
+        <StyledImage
+          fluid={image.fluid}
+          imgStyle={{ objectFit: "cover" }}
+          alt="iPhone mit The Americans Podcast"
+        />
+      )
     }}
   />
 )
-export default Image
+export default ShowCaseImage

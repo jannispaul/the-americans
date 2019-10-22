@@ -3,7 +3,6 @@ import styled from "styled-components"
 import PhoneImage from "../components/PhoneImage"
 import ProviderLogos from "../components/ProviderLogos"
 import bgcurve from "../content/images/curves/bg-curve.svg"
-import stars from "../content/images/stars.svg"
 import { device } from "../theme/breakpoints"
 
 const StyledSection = styled.section`
@@ -75,7 +74,6 @@ const StyledStars = styled.img`
 const Prodviders = props => (
   <StyledSection>
     <ContentContainer>
-      <StyledStars src={stars} alt="verzierende Sterne"></StyledStars>
       <StyledQuote>
         Lorem <span>ipsum</span> dolor sit amet, consectetuer{" "}
         <span>adipiscing</span> elit. <span>Aenean</span> commodo ligula eget
