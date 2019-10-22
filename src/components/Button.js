@@ -3,35 +3,30 @@ import { Link } from "gatsby"
 import styled from "styled-components"
 
 const StyledButton = styled(Link)`
-  display: inline-block;
-  background: #ff8370;
-  border: none;
-  color: white;
-  font-family: "SourceSansPro", -apple-system, BlinkMacSystemFont, Arial,
-    sans-serif;
-  font-size: 20px;
-  font-weight: 600;
+  display: block;
+  margin: auto;
+  font-family: "AvenirNextCondensed-Bold";
+  font-size: 18px;
+  color: #ff0045;
+  border: 3px solid #ff0045;
+  border-radius: 7.2px;
   text-align: center;
-  /* text-transform: uppercase; */
   text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.28px;
 
+  width: 250px;
+  max-width: 100%;
   user-select: none;
   cursor: pointer;
+  position: relative;
+  padding: 14px 0 13px 0;
+  margin-bottom: 40px;
 
-  padding: 1rem 1.5rem;
-  /* margin-bottom: var(--space-s); */
-
-  /* width: 100%; */
   transform: translateY(0);
   transition: all var(--time-fast);
 
-  @media (min-width: 500px) {
-    width: auto;
-  }
-
   :hover {
-    color: white;
-    background: #ff8370;
     transform: translateY(-1px);
     transition: all var(--time-fast);
   }

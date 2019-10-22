@@ -3,31 +3,52 @@ import styled from "styled-components"
 import { Link } from "gatsby"
 import SmallLabel from "./SmallLabel"
 import Img from "gatsby-image"
+import PodigeePlayer from "./PodigeePlayer"
 
-const StyledLink = styled(Link)`
+const Episode = styled.div`
   max-width: 700px;
   margin: auto;
-  text-align: center;
+  text-align: left;
   text-decoration: none;
   display: block;
-  padding: 32px 16px;
+  padding: 32px 0;
   transition: background 0.2s;
 
-  :hover {
-    background: #fafafa;
-    transition: background 0.2s;
+  & > p {
+    margin-bottom: 16px;
   }
+`
+const PlayerContainer = styled.div`
+  display: grid;
+  grid-template-columns: 100px 16px auto;
+  margin-bottom: 16px;
+  & > picture {
+    margin-right: 16px;
+  }
+`
+const StyledLink = styled(Link)`
+  font-family: AvenirNextCondensed-DemiBold;
+  font-size: 16px;
+  color: #ff0045;
+  letter-spacing: 0.25px;
+  text-transform: uppercase;
 `
 
 const EpisodeLink = props => (
-  <StyledLink key={props.id} to={props.slug}>
+  <Episode key={props.id}>
     <SmallLabel>{props.date}</SmallLabel>
     <h3>{props.title}</h3>
-    <p>{props.body}</p>
-    <Img sizes={props.image.sizes} alt={props.image.description} />
-
-    {/* <p>{node.frontmatter.podcastUrl}</p> */}
-  </StyledLink>
+    <PlayerContainer>
+      <Img sizes={props.image.sizes} alt={props.image.description} />
+      <div></div>
+      <PodigeePlayer
+        theme="default-dark"
+        source={props.podcastSlug}
+      ></PodigeePlayer>
+    </PlayerContainer>
+    <p>{props.excerpt}</p>
+    <StyledLink to={props.slug}>Listen now</StyledLink>
+  </Episode>
 )
 
 export default EpisodeLink

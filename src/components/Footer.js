@@ -1,55 +1,88 @@
 import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
-import footercurve from "../content/images/curves/footer-curve.svg"
-import facebook from "../content/images/facebook.svg"
-import instagram from "../content/images/instagram.svg"
+import facebook from "../content/images/socialmedia/facebook.svg"
+import instagram from "../content/images/socialmedia/instagram.svg"
 import { device } from "../theme/breakpoints"
+import Icon from "../components/Icon"
+import { ICONS } from "../theme/Icons"
 
 const StyledFooter = styled.footer`
-  /* min-height: 200px; */
+  padding: 24px 16px;
   position: relative;
-  min-height: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url(${footercurve});
-  background-size: 100% 100%;
-  z-index: 1;
+  background: #2c004c;
+  color: white;
+  & > div {
+    width: 1256px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column-reverse;
+    @media ${device.mobileL} {
+      flex-direction: row;
+    }
+    & > div {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      @media ${device.mobileL} {
+        justify-content: flex-start;
+        :last-of-type {
+          justify-content: flex-end;
+        }
+      }
+    }
+  }
 
   /*Links in footer*/
   a {
     margin: 10px;
-    margin-top: 70px;
     text-decoration: undeline;
     text-decoration-color: rgba(0, 0, 0, 0);
     line-height: 2;
     display: flex;
-    @media (${device.tablet}) {
-      margin: 20px;
-    }
 
     :hover {
-      text-decoration-color: rgba(0, 0, 0, 0.5);
+      text-decoration-color: rgba(255, 255, 255, 0.5);
     }
   }
 `
 
-const StyledLogo = styled.img`
-  filter: invert(1);
+const StyledIcon = styled.div`
+  display: inline-block;
+  margin-left: 10px;
+  & > svg {
+    width: 24px;
+    fill: #fff;
+  }
 `
-
 const Footer = props => (
   <StyledFooter>
-    {/* <StyledCurve src={footercurve}></StyledCurve> */}
-    <Link to="/datenschutz">Datenschutz</Link>
-    <Link to="/impressum">Impressum</Link>
-    <a href="https://www.facebook.com">
-      <StyledLogo src={facebook} alt="Faccebook logo"></StyledLogo>
-    </a>
-    <a href="https://www.instagram.com">
-      <StyledLogo src={instagram} alt="Instagram logo"></StyledLogo>
-    </a>
+    <div>
+      <div>
+        <Link to="/impressum">Impressum</Link>
+        <Link to="/datenschutz">Datenschutz</Link>
+      </div>
+      <div>
+        <a href="https://www.facebook.com">
+          <StyledIcon>
+            <Icon icon={ICONS.FACEBOOK} />
+          </StyledIcon>
+        </a>
+        <a href="https://www.instagram.com">
+          <StyledIcon>
+            <Icon icon={ICONS.INSTAGRAM} />
+          </StyledIcon>
+        </a>
+        <a href="https://www.twitter.com">
+          <StyledIcon>
+            <Icon icon={ICONS.TWITTER} />
+          </StyledIcon>
+        </a>
+      </div>
+    </div>
   </StyledFooter>
 )
 export default Footer
