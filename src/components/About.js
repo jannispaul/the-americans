@@ -56,22 +56,22 @@ const About = props => (
       </p>
       <SocialContainer>
         Follow:
-        <a href="https://facebook.com">
+        <a href="https://business.facebook.com/the.americans.podcast">
           <StyledIcon>
             <Icon icon={ICONS.FACEBOOK} />
           </StyledIcon>
         </a>
-        <a href="https://linkedin.com">
+        <a href="https://www.linkedin.com/in/chelsea-spieker-2859b016/">
           <StyledIcon>
             <Icon icon={ICONS.LINKEDIN} />
           </StyledIcon>
         </a>
-        <a href="https://instagram.com">
+        <a href="https://www.instagram.com/chelsea.spieker">
           <StyledIcon>
             <Icon icon={ICONS.INSTAGRAM} />
           </StyledIcon>
         </a>
-        <a href="https://twitter.com">
+        <a href="https://twitter.com/ChelseaSpieker">
           <StyledIcon>
             <Icon icon={ICONS.TWITTER} />
           </StyledIcon>

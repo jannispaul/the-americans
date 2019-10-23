@@ -1,12 +1,21 @@
 import React from "react"
 import { graphql } from "gatsby"
+import Img from "gatsby-image"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { BLOCKS } from "@contentful/rich-text-types"
-import Layout from "../components/Layout"
+import styled from "styled-components"
 
-import PodigeePlayer from "../components/PodigeePlayer"
-import Img from "gatsby-image"
+import { device } from "../theme/breakpoints"
+import Icon from "../components/Icon"
+import { ICONS } from "../theme/Icons"
+import background from "../content/images/bg.jpg"
+
+import Layout from "../components/Layout"
 import SEO from "../components/Seo"
+import PodigeePlayer from "../components/PodigeePlayer"
+import ContentfulRichTextImage from "../components/ContentfulRichTextImage"
+import KeepInTouch from "../components/KeepInTouch"
+import MoreOfTheAmericans from "../components/MoreOfTheAmericans"
 
 export const query = graphql`
   query($slug: String!) {
@@ -26,122 +35,190 @@ export const query = graphql`
       title
       slug
       podcastSlug
-      createdAt
+      createdAt(formatString: "DD. MMMM YYYY", locale: "de-DE")
     }
   }
 `
-const richTextImageWidth = 1000
-const richTextImageQuality = 20
+const StyledHero = styled.section`
+  width: 100%;
+  padding: 36px 16px;
+  background: url(${background});
+  @media ${device.tablet} {
+    padding: 90px 16px;
+  }
+  & > div {
+    max-width: 1256px;
+    margin: auto;
+    @media ${device.tablet} {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+    }
+  }
+  & p {
+    font-size: 10px;
+  }
+`
+const ContentContainer = styled.section`
+  order: -1;
+`
+const CoverImage = styled(Img)`
+  width: 220px;
+  height: 220px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  margin: auto;
+  margin-bottom: 32px;
 
-const EpisodeTemplate = ({ data: { podcast } }) => (
-  <Layout logocolor="#69d9c2">
+  @media ${device.tablet} {
+    border-radius: 9px;
+    width: 350px;
+    height: 350px;
+  }
+`
+const StyledContent = styled.article`
+  padding: 32px 16px;
+  max-width: 740px;
+  margin: auto;
+  @media ${device.tablet} {
+    padding: 100px 16px;
+  }
+
+  & figure {
+    margin-bottom: 32px;
+  }
+  & figcaption {
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+  & p {
+    margin-bottom: 32px;
+  }
+`
+
+const SocialContainer = styled.div`
+  font-family: AvenirNextCondensed-Bold;
+  font-size: 21.6px;
+  color: #ff0045;
+  letter-spacing: 0.34px;
+  text-align: center;
+  margin-top: 16px;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  & a {
+    margin-left: 20px;
+  }
+`
+
+const StyledIcon = styled.div`
+  display: inline-block;
+  & > svg {
+    fill: #ff0045;
+    width: 24px;
+  }
+`
+const Seperator = styled.hr`
+  width: 100%;
+  height: 24px;
+  background: #f7f2fb;
+  border: none;
+`
+const EpisodeTemplate = ({ data: { podcast }, location }) => (
+  <Layout>
     <SEO title={podcast.title} ogimage={podcast.image.resize.src} />
-    <Img sizes={podcast.image.sizes} alt={podcast.image.description} />
-
-    <h1>{podcast.title}</h1>
-    <p>{podcast.createdAt}</p>
-    <PodigeePlayer
-      theme="default-dark"
-      source={podcast.podcastSlug}
-    ></PodigeePlayer>
-    <div>
-      {documentToReactComponents(podcast.body.json, {
-        renderNode: {
-          [BLOCKS.EMBEDDED_ASSET]: (node, children) => (
-            <div>
-              {/* <img
-                  src={`${node.data.target.fields.file["de"].url}?w=200`}
-                  alt={node.data.target.fields.title["de"]}
-                /> */}
-
-              <figure>
-                <Img
-                  alt={node.data.target.fields.title["de"]}
-                  sizes={{
-                    aspectRatio:
-                      node.data.target.fields.file["de"].details.image.width /
-                      node.data.target.fields.file["de"].details.image.height,
-                    src:
-                      `${node.data.target.fields.file["de"].url}?w=${richTextImageWidth}&fm=webp&q=${richTextImageQuality}` +
-                      ",\n",
-                    sizes: `(max-width: ${richTextImageWidth}px) 100vw, ${richTextImageWidth}px`,
-                    srcSet:
-                      `${
-                        node.data.target.fields.file["de"].url
-                      }?w=${richTextImageWidth /
-                        4}&fm=jpg&q=${richTextImageQuality}` +
-                      ` ${richTextImageWidth / 4}w,\n` +
-                      `${
-                        node.data.target.fields.file["de"].url
-                      }?w=${richTextImageWidth /
-                        2}&fm=jpg&q=${richTextImageQuality}` +
-                      ` ${richTextImageWidth / 2}w,\n` +
-                      `${node.data.target.fields.file["de"].url}?w=${richTextImageWidth}&fm=jpg&q=${richTextImageQuality}` +
-                      ` ${richTextImageWidth}w,\n` +
-                      `${
-                        node.data.target.fields.file["de"].url
-                      }?w=${richTextImageWidth *
-                        1.5}&fm=jpg&q=${richTextImageQuality}` +
-                      ` ${richTextImageWidth * 1.5}w,\n` +
-                      `${
-                        node.data.target.fields.file["de"].url
-                      }?w=${richTextImageWidth *
-                        2}&fm=jpg&q=${richTextImageQuality}` +
-                      ` ${richTextImageWidth * 2}w,\n` +
-                      `${
-                        node.data.target.fields.file["de"].url
-                      }?w=${richTextImageWidth *
-                        3}&fm=jpg&q=${richTextImageQuality}` +
-                      ` ${richTextImageWidth * 3}w,\n` +
-                      `${
-                        node.data.target.fields.file["de"].url
-                      }?w=${richTextImageWidth *
-                        3.992}&fm=jpg&q=${richTextImageQuality}` +
-                      ` ${richTextImageWidth * 3.992}w`,
-                    srcSetWebp:
-                      `${
-                        node.data.target.fields.file["de"].url
-                      }?w=${richTextImageWidth /
-                        4}&fm=webp&q=${richTextImageQuality}` +
-                      ` ${richTextImageWidth / 4}w,\n` +
-                      `${
-                        node.data.target.fields.file["de"].url
-                      }?w=${richTextImageWidth /
-                        2}&fm=webp&q=${richTextImageQuality}` +
-                      ` ${richTextImageWidth / 2}w,\n` +
-                      `${node.data.target.fields.file["de"].url}?w=${richTextImageWidth}&fm=webp&q=${richTextImageQuality}` +
-                      ` ${richTextImageWidth}w,\n` +
-                      `${
-                        node.data.target.fields.file["de"].url
-                      }?w=${richTextImageWidth *
-                        1.5}&fm=webp&q=${richTextImageQuality}` +
-                      ` ${richTextImageWidth * 1.5}w,\n` +
-                      `${
-                        node.data.target.fields.file["de"].url
-                      }?w=${richTextImageWidth *
-                        2}&fm=webp&q=${richTextImageQuality}` +
-                      ` ${richTextImageWidth * 2}w,\n` +
-                      `${
-                        node.data.target.fields.file["de"].url
-                      }?w=${richTextImageWidth *
-                        3}&fm=webp&q=${richTextImageQuality}` +
-                      ` ${richTextImageWidth * 3}w,\n` +
-                      `${
-                        node.data.target.fields.file["de"].url
-                      }?w=${richTextImageWidth *
-                        3.992}&fm=webp&q=${richTextImageQuality}` +
-                      ` ${richTextImageWidth * 3.992}w`,
-                  }}
-                />
-                <figcaption>
-                  {node.data.target.fields.description["de"]}
-                </figcaption>
-              </figure>
-            </div>
-          ),
-        },
-      })}
-    </div>
+    <StyledHero>
+      <div>
+        <CoverImage
+          sizes={podcast.image.sizes}
+          alt={podcast.image.description}
+        />
+        <ContentContainer>
+          <p>{podcast.createdAt}</p>
+          <h1>{podcast.title}</h1>
+          <PodigeePlayer
+            theme="default-dark"
+            source={podcast.podcastSlug}
+          ></PodigeePlayer>
+        </ContentContainer>
+      </div>
+    </StyledHero>
+    <StyledContent>
+      <div>
+        {documentToReactComponents(podcast.body.json, {
+          renderNode: {
+            [BLOCKS.EMBEDDED_ASSET]: node => (
+              <div>
+                <figure>
+                  <ContentfulRichTextImage
+                    node={node}
+                    richTextImageWidth="740"
+                    richTextImageQuality="60"
+                  ></ContentfulRichTextImage>
+                  <figcaption>
+                    {node.data.target.fields.description["de"]}
+                  </figcaption>
+                </figure>
+              </div>
+            ),
+          },
+        })}
+      </div>
+      <SocialContainer>
+        Share:
+        <a
+          href={`https://www.facebook.com/sharer/sharer.php?u=https://the-americans.mediapioneer.com${location.pathname}`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <StyledIcon>
+            <Icon icon={ICONS.FACEBOOK} />
+          </StyledIcon>
+        </a>
+        <a
+          href={`
+          https://www.linkedin.com/shareArticle?mini=true&url=https://the-americans.mediapioneer.com${location.pathname}&title=&summary=– ${podcast.title} – Listen to The Americans podcast: https://the-americans.mediapioneer.com${location.pathname}:&source=`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <StyledIcon>
+            <Icon icon={ICONS.LINKEDIN} />
+          </StyledIcon>
+        </a>
+        <a
+          href={`https://twitter.com/intent/tweet?text=${podcast.title} – Listen to The Americans podcast: https://the-americans.mediapioneer.com${location.pathname}`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <StyledIcon>
+            <Icon icon={ICONS.TWITTER} />
+          </StyledIcon>
+        </a>
+        <a
+          href={`whatsapp://send?text=${podcast.title} – Listen to The Americans podcast: https://the-americans.mediapioneer.com${location.pathname}`}
+          dataAction="share/whatsapp/share"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <StyledIcon>
+            <Icon icon={ICONS.WHATSAPP} />
+          </StyledIcon>
+        </a>
+        <a
+          href={`mailto:?&subject=${podcast.title}&body=Listen to The Americans podcast:%0D%0Ahttps://the-americans.mediapioneer.com/${location.pathname}`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <StyledIcon>
+            <Icon icon={ICONS.EMAIL} />
+          </StyledIcon>
+        </a>
+      </SocialContainer>
+    </StyledContent>
+    <Seperator></Seperator>
+    <MoreOfTheAmericans></MoreOfTheAmericans>
+    <KeepInTouch></KeepInTouch>
   </Layout>
 )
 

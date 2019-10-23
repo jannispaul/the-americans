@@ -46,6 +46,7 @@ const StyledLogo = styled(Link)`
   grid-row: 1;
   display: flex;
   align-items: center;
+  height: 100%;
 
   & > img {
     width: 105px;
@@ -111,17 +112,17 @@ const Navigation = props => (
       </StyledLogo>
 
       <SocialLinks>
-        <a href="https://facebook.com">
+        <a href="https://business.facebook.com/the.americans.podcast">
           <StyledIcon>
             <Icon icon={ICONS.LINKEDIN} />
           </StyledIcon>
         </a>
-        <a href="https://instagram.com">
+        <a href="https://www.instagram.com/chelsea.spieker">
           <StyledIcon>
             <Icon icon={ICONS.INSTAGRAM} />
           </StyledIcon>
         </a>
-        <a href="https://twitter.com">
+        <a href="https://twitter.com/ChelseaSpieker">
           <StyledIcon>
             <Icon icon={ICONS.TWITTER} />
           </StyledIcon>

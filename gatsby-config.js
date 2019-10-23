@@ -20,8 +20,8 @@ module.exports = {
   siteMetadata: {
     title: `The Americans`,
     description: `Lorem ipsum`,
-    author: `Media Pioneer`,
-    // siteUrl: `localhost`,
+    author: `Media Pioneer, Chelsea Spieker`,
+    siteUrl: `https://the-americans.mediapioneer.com`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

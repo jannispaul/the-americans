@@ -22,6 +22,7 @@ const PlayerContainer = styled.div`
   display: grid;
   grid-template-columns: 100px 16px auto;
   margin-bottom: 16px;
+  align-items: center;
   & > picture {
     margin-right: 16px;
   }

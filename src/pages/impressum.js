@@ -1,11 +1,11 @@
 import React from "react"
 // import { Link } from "gatsby"
 
-import AlternativeLayout from "../components/AlternativeLayout"
+import Layout from "../components/Layout"
 import SEO from "../components/Seo"
 
 const ImpressumPage = () => (
-  <AlternativeLayout>
+  <Layout>
     <SEO title="Datenschutz" />
     {/* <h1>Hi people</h1>
     <p>Welcome to your new Gatsby site.</p>
@@ -23,7 +23,7 @@ const ImpressumPage = () => (
       Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
       sit amet.
     </p>
-  </AlternativeLayout>
+  </Layout>
 )
 
 export default ImpressumPage

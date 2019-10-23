@@ -13,11 +13,10 @@ const IndexPage = () => (
   <Layout>
     <SEO title="The Americans" lang="de" />
     <Hero></Hero>
-    <ScrollAnchor id="episodes"></ScrollAnchor>
+    <ScrollAnchor id="podcast"></ScrollAnchor>
     <RecentEpisodes></RecentEpisodes>
-    <ScrollAnchor id="about"></ScrollAnchor>
+    <ScrollAnchor id="host"></ScrollAnchor>
     <About></About>
-    <ScrollAnchor id="about"></ScrollAnchor>
     <KeepInTouch></KeepInTouch>
     <MPProducts></MPProducts>
   </Layout>
