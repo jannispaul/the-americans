@@ -35,6 +35,8 @@ const StyledHeadline = styled.div`
     position: absolute;
     margin-left: auto;
     margin-right: auto;
+    user-drag: none;
+    user-select: none;
     left: 0;
     right: 0;
     top: 8px;
