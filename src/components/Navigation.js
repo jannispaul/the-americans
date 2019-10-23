@@ -99,8 +99,8 @@ const Navigation = props => (
   <StyledNav>
     <div>
       <StyledLinks>
-        <Link to="/#podcast">Podcast</Link>
-        <Link to="/#episoden">Episoden</Link>
+        <Link to="/">Podcast</Link>
+        <Link to="/#episodes">Episodes</Link>
         <Link to="/#host">Host</Link>
       </StyledLinks>
 

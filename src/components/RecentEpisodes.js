@@ -21,8 +21,7 @@ const StyledHeadline = styled.div`
   width: 100%;
   text-align: center;
   margin-top: 48px;
-  & > h2,
-  & > h3 {
+  & > h2 {
     color: #7000c0;
   }
   & img {
@@ -31,18 +30,19 @@ const StyledHeadline = styled.div`
     margin-left: auto;
     margin-right: auto;
     left: 0;
-    right: 10px;
+    right: 8px;
     top: 8px;
     @media ${device.tablet} {
       display: block;
-      width: 50%;
-      top: 5px;
+      width: 351px;
+      top: 8px;
       max-width: 430px;
     }
     @media ${device.laptop} {
-      width: 50%;
+      width: 100%;
+      width: 501px;
       max-width: 100%;
-      top: 11px;
+      top: 12px;
     }
   }
 `
@@ -90,7 +90,7 @@ export default () => (
           ></EpisodeLink>
         ))}
         <br />
-        <Button to="/alle-episoden/">All Episodes</Button>
+        <Button to="/all-episodes/">All Episodes</Button>
         <br />
       </StyledRecentEpisodes>
     )}

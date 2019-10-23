@@ -13,7 +13,7 @@ const IndexPage = () => (
   <Layout>
     <SEO title="The Americans" lang="de" />
     <Hero></Hero>
-    <ScrollAnchor id="podcast"></ScrollAnchor>
+    <ScrollAnchor id="episodes"></ScrollAnchor>
     <RecentEpisodes></RecentEpisodes>
     <ScrollAnchor id="host"></ScrollAnchor>
     <About></About>

@@ -1,9 +1,6 @@
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
 import EpisodeLink from "./EpisodeLink"
-// import styles from './news.module.css'
-// import Icon from './icon'
-// import { ICONS } from '../constants/icons.js'
 
 export default () => (
   <StaticQuery
@@ -31,7 +28,7 @@ export default () => (
       }
     `}
     render={data => (
-      <div>
+      <div style={{ padding: "0 16px" }}>
         {data.allContentfulPodcast.edges.map(({ node }) => (
           <EpisodeLink
             id={node.id}

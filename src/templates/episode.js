@@ -23,6 +23,9 @@ export const query = graphql`
       body {
         json
       }
+      description {
+        description
+      }
       image {
         sizes(maxWidth: 1000) {
           ...GatsbyContentfulSizes_withWebp
@@ -127,7 +130,11 @@ const Seperator = styled.hr`
 `
 const EpisodeTemplate = ({ data: { podcast }, location }) => (
   <Layout>
-    <SEO title={podcast.title} ogimage={podcast.image.resize.src} />
+    <SEO
+      title={podcast.title}
+      ogimage={podcast.image.resize.src}
+      description={podcast.description.description}
+    />
     <StyledHero>
       <div>
         <CoverImage
