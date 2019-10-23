@@ -31,7 +31,6 @@ const StyledButton = styled(Link)`
     transition: all var(--time-fast);
   }
   :active {
-    background: #ff8370;
     transform: translateY(1px);
   }
 `
