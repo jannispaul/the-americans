@@ -63,7 +63,7 @@ const Hero = props => (
         </p>
 
         <ProviderLogos></ProviderLogos>
-        <MoreLink to="#podcast">
+        <MoreLink to="#episodes">
           <img src={arrowDown} alt="Pfeil nach unten" />
           Listen
           <br />
