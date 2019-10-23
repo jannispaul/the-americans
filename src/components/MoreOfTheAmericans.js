@@ -1,19 +1,24 @@
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
-import EpisodeLink from "./EpisodeLink"
+import EpisodeLinkNoPlayer from "./EpisodeLinkNoPlayer"
 import styled from "styled-components"
-import headlineBG from "../content/images/headline-bg-1.png"
+import headlineBG from "../content/images/headline-bg-2.png"
+
 import { device } from "../theme/breakpoints"
 
-import Button from "./Button"
-
 const StyledRecentEpisodes = styled.section`
-  /* display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center; */
   padding: 0 16px;
   position: relative;
+`
+
+const ContentContainer = styled.div`
+  max-width: 1256px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  @media ${device.tablet} {
+    grid-template-columns: repeat(3, 1fr);
+  }
 `
 
 const StyledHeadline = styled.div`
@@ -31,18 +36,15 @@ const StyledHeadline = styled.div`
     margin-left: auto;
     margin-right: auto;
     left: 0;
-    right: 10px;
+    right: 0;
     top: 8px;
     @media ${device.tablet} {
       display: block;
-      width: 50%;
-      top: 5px;
       max-width: 430px;
     }
     @media ${device.laptop} {
-      width: 50%;
       max-width: 100%;
-      top: 11px;
+      top: 14px;
     }
   }
 `
@@ -50,7 +52,7 @@ const StyledHeadline = styled.div`
 export default () => (
   <StaticQuery
     query={graphql`
-      query LatestEpisodesQuery {
+      query MoreEpisodesQuery {
         allContentfulPodcast(limit: 3, skip: 1) {
           edges {
             node {
@@ -76,22 +78,22 @@ export default () => (
     render={data => (
       <StyledRecentEpisodes>
         <StyledHeadline>
-          <h2>Recent Episodes</h2>
+          <h2>More of The Americans</h2>
           <img src={headlineBG} alt="Airplanes flying away from headline" />
         </StyledHeadline>
-        {data.allContentfulPodcast.edges.map(({ node }) => (
-          <EpisodeLink
-            key={node.id}
-            slug={node.slug}
-            date={node.updatedAt}
-            title={node.title}
-            excerpt={node.description.description.substring(0, 105) + " ..."}
-            image={node.image}
-          ></EpisodeLink>
-        ))}
-        <br />
-        <Button to="/alle-episoden/">All Episodes</Button>
-        <br />
+        {/* <Styledh2>
+          Recent Episodes
+        </Styledh2> */}
+        <ContentContainer>
+          {data.allContentfulPodcast.edges.map(({ node }) => (
+            <EpisodeLinkNoPlayer
+              key={node.id}
+              slug={node.slug}
+              title={node.title}
+              image={node.image}
+            ></EpisodeLinkNoPlayer>
+          ))}
+        </ContentContainer>
       </StyledRecentEpisodes>
     )}
   />

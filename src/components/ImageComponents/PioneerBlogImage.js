@@ -2,7 +2,7 @@ import React from "react"
 import { StaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import styled from "styled-components"
-import { device } from "../../theme/breakpoints"
+// import { device } from "../../theme/breakpoints"
 
 /**
  * This component is built using `gatsby-background-image` to automatically

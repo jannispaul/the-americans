@@ -14,16 +14,17 @@ export default () => (
             node {
               title
               slug
+              description {
+                description
+              }
               image {
                 sizes(maxWidth: 800) {
                   ...GatsbyContentfulSizes_withWebp
                 }
                 description
               }
-              description {
-                description
-              }
-              updatedAt(formatString: "DD. MMMM YYYY", locale: "de-DE")
+
+              createdAt(formatString: "DD. MMMM YYYY", locale: "de-DE")
             }
           }
         }
@@ -35,9 +36,9 @@ export default () => (
           <EpisodeLink
             id={node.id}
             slug={node.slug}
-            date={node.updatedAt}
+            date={node.createdAt}
             title={node.title}
-            body={node.description.description}
+            excerpt={node.description.description.substring(0, 105) + " ..."}
             image={node.image}
           ></EpisodeLink>
         ))}

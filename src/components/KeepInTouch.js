@@ -49,7 +49,9 @@ const KeepInTouch = props => (
           Free, no ads and a new episode every Wednesday: Listen to The
           Americans on your favorite streaming service. And please feel free to
           contact us with your feedback at:{" "}
-          <a href="mailto:hello@the-americans.com">hello@the-americans.com</a>
+          <a href="mailto:americans@mediapioneer.com">
+            americans@mediapioneer.com
+          </a>
         </p>
 
         <ProviderLogos></ProviderLogos>

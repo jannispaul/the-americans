@@ -1,8 +1,6 @@
 import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
-import facebook from "../content/images/socialmedia/facebook.svg"
-import instagram from "../content/images/socialmedia/instagram.svg"
 import { device } from "../theme/breakpoints"
 import Icon from "../components/Icon"
 import { ICONS } from "../theme/Icons"

@@ -1,16 +1,16 @@
 import React from "react"
 
-import AlternativeLayout from "../components/AlternativeLayout"
+import Layout from "../components/Layout"
 import SEO from "../components/Seo"
 import Button from "../components/Button"
 
 const NotFoundPage = () => (
-  <AlternativeLayout>
+  <Layout>
     <SEO title="404: Nicht gefunden" index="noindex" />
     <h1>Diese Seite konnte leider nicht gefunden werden.</h1>
     <br />
     <Button to="/">Zur Startseite</Button>
-  </AlternativeLayout>
+  </Layout>
 )
 
 export default NotFoundPage
