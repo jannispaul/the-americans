@@ -18,10 +18,11 @@ if (!spaceId || !accessToken) {
 
 module.exports = {
   siteMetadata: {
-    title: `The Americans`,
-    description: `Lorem ipsum`,
+    title: `The Americans – Podcast with Chelsea Spieker`,
+    description: `★ This interview podcast is about today’s America. It takes a closer look at politics and society, and has a special focus on people and their stories. ★`,
     author: `Media Pioneer, Chelsea Spieker`,
-    siteUrl: `https://the-americans.mediapioneer.com`,
+    siteUrl: `https://the-americans.com`,
+    keywords: ``,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
