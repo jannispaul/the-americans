@@ -27,6 +27,7 @@ const ProductContainer = styled.div`
   grid-template-columns: repeat(2, minmax(100px, 1fr));
   margin-top: 24px;
   grid-gap: 12px;
+  justify-content: center;
 
   @media ${device.laptop} {
     grid-template-columns: repeat(4, minmax(192px, 1fr));
@@ -47,8 +48,13 @@ const ProductContainer = styled.div`
       letter-spacing: 0.27px;
       line-height: 30px;
     }
-    &:not(:last-of-type) {
-      /* margin-right: 40px; */
+
+    transition: 200ms transform ease;
+    :hover {
+      & div {
+        transform: scale(1.03);
+        transition: 200ms transform ease;
+      }
     }
   }
 `
@@ -65,19 +71,35 @@ const MPProducts = props => (
       <PreHeadline>Further productions from</PreHeadline>
       <img src={mpLogo} alt="Mediapioneer-Logo" />
       <ProductContainer>
-        <a href="https://www.gaborsteingart.com/der-podcast/">
+        <a
+          href="https://www.gaborsteingart.com/der-podcast/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <MBPodcastImage></MBPodcastImage>
           <p>Steingarts Morning Briefing Podcast</p>
         </a>
-        <a href="https://www.gaborsteingart.com/morning-briefing/">
+        <a
+          href="https://www.gaborsteingart.com/morning-briefing/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <MBNewsletterImage></MBNewsletterImage>
           <p>Steingarts Morning Breifing Newsletter</p>
         </a>
-        <a href="https://mediapioneer.com/blog/">
+        <a
+          href="https://mediapioneer.com/blog/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <PioneerBlogImage></PioneerBlogImage>
           <p>Pioneer Blog – von Michael Bröcker</p>
         </a>
-        <a href="https://mediapioneer.com/redaktionsschiff/">
+        <a
+          href="https://mediapioneer.com/redaktionsschiff/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <PioneerOneImage></PioneerOneImage>
           <p>Pioneer One – das Redaktionsschiff</p>
         </a>
