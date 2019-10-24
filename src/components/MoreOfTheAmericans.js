@@ -83,9 +83,6 @@ export default () => (
           <h2>More of The Americans</h2>
           <img src={headlineBG} alt="Airplanes flying away from headline" />
         </StyledHeadline>
-        {/* <Styledh2>
-          Recent Episodes
-        </Styledh2> */}
         <ContentContainer>
           {data.allContentfulPodcast.edges.map(({ node }) => (
             <EpisodeLinkNoPlayer
