@@ -9,8 +9,10 @@ export default () => (
         allContentfulPodcast(limit: 1000) {
           edges {
             node {
+              id
               title
               slug
+              podcastSlug
               description {
                 description
               }
@@ -31,12 +33,13 @@ export default () => (
       <div style={{ padding: "0 16px" }}>
         {data.allContentfulPodcast.edges.map(({ node }) => (
           <EpisodeLink
-            id={node.id}
+            key={node.id}
             slug={node.slug}
             date={node.createdAt}
             title={node.title}
             excerpt={node.description.description.substring(0, 105) + " ..."}
             image={node.image}
+            podcastSlug={node.podcastSlug}
           ></EpisodeLink>
         ))}
       </div>

@@ -36,16 +36,13 @@ const StyledLink = styled(Link)`
 `
 
 const EpisodeLink = props => (
-  <Episode key={props.id}>
+  <Episode>
     <SmallLabel>{props.date}</SmallLabel>
     <h3>{props.title}</h3>
     <PlayerContainer>
       <Img sizes={props.image.sizes} alt={props.image.description} />
       <div></div>
-      <PodigeePlayer
-        theme="default-dark"
-        source={props.podcastSlug}
-      ></PodigeePlayer>
+      <PodigeePlayer theme="minimal" source={props.podcastSlug}></PodigeePlayer>
     </PlayerContainer>
     <p>{props.excerpt}</p>
     <StyledLink to={props.slug}>Listen now</StyledLink>
