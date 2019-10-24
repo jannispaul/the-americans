@@ -56,6 +56,7 @@ export default () => (
         allContentfulPodcast(limit: 3) {
           edges {
             node {
+              podcastSlug
               title
               body {
                 json
@@ -89,6 +90,7 @@ export default () => (
             title={node.title}
             excerpt={node.description.description.substring(0, 105) + " ..."}
             image={node.image}
+            podcastSlug={node.podcastSlug}
           ></EpisodeLink>
         ))}
         <br />
