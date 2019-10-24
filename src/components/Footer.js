@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { Link } from "gatsby"
+// import { Link } from "gatsby"
 import { device } from "../theme/breakpoints"
 import Icon from "../components/Icon"
 import { ICONS } from "../theme/Icons"
@@ -60,8 +60,8 @@ const Footer = props => (
   <StyledFooter>
     <div>
       <div>
-        <Link to="/impressum">Impressum</Link>
-        <Link to="/datenschutz">Datenschutz</Link>
+        <a href="https://mediapioneer.com/datenschutz/">Impressum</a>
+        <a href="https://mediapioneer.com/impressum/">Datenschutz</a>
       </div>
       <div>
         <a
