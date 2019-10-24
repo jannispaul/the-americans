@@ -13,12 +13,9 @@ const StyledLogos = styled.div`
   margin-bottom: 32px;
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-template-columns: repeat(3, minmax(100px, 1fr));
   grid-gap: 10px;
   justify-content: center;
-  @media ${device.tablet} {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  }
 
   & > a {
     height: 60px;

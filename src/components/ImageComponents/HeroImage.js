@@ -14,10 +14,9 @@ const StyledImage = styled(Img)`
   display: none;
   @media ${device.tablet} {
     position: absolute !important;
-
+    bottom: 0;
     width: 70%;
     z-index: 0;
-    top: 0;
     right: 0;
   }
 `
@@ -40,7 +39,7 @@ const HeroImage = () => (
       return (
         <StyledImage
           fluid={image.fluid}
-          imgStyle={{ objectFit: "contain" }}
+          imgStyle={{ objectFit: "contain", objectPosition: "100% 100%" }}
           alt="Frau Chelsea Spieker schaut mit bestimmtem Blick in die Kamera"
         />
       )
