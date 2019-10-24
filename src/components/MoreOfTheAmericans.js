@@ -7,7 +7,7 @@ import headlineBG from "../content/images/headline-bg-2.png"
 import { device } from "../theme/breakpoints"
 
 const StyledRecentEpisodes = styled.section`
-  padding: 0 16px;
+  padding: 0 24px;
   position: relative;
 `
 

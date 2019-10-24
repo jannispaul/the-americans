@@ -31,7 +31,7 @@ const StyledHero = styled.section`
 const HeroContent = styled.div`
   position: relative;
   z-index: 1;
-  padding: 16px;
+  padding: 24px;
   max-width: 560px;
   @media ${device.tablet} {
     grid-column: 1/3;

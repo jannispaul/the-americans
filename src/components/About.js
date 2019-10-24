@@ -9,7 +9,7 @@ import { device } from "../theme/breakpoints"
 const StyledAbout = styled.section`
   background: #fff2f5;
   width: 100%;
-  padding: 24px 16px;
+  padding: 24px 24px;
   text-align: center;
 
   & > div {
@@ -38,7 +38,10 @@ const SocialContainer = styled.div`
 
 const StyledIcon = styled.div`
   display: inline-block;
-  margin-left: 24px;
+  margin-left: 16px;
+  @media ${device.mobileM} {
+    margin-left: 24px;
+  }
   & > svg {
     fill: #ff0045;
     width: 24px;
@@ -56,22 +59,38 @@ const About = props => (
       </p>
       <SocialContainer>
         Follow:
-        <a href="https://business.facebook.com/the.americans.podcast">
+        <a
+          href="https://business.facebook.com/the.americans.podcast"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <StyledIcon>
             <Icon icon={ICONS.FACEBOOK} />
           </StyledIcon>
         </a>
-        <a href="https://www.linkedin.com/in/chelsea-spieker-2859b016/">
+        <a
+          href="https://www.linkedin.com/in/chelsea-spieker-2859b016/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <StyledIcon>
             <Icon icon={ICONS.LINKEDIN} />
           </StyledIcon>
         </a>
-        <a href="https://www.instagram.com/chelsea.spieker">
+        <a
+          href="https://www.instagram.com/chelsea.spieker"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <StyledIcon>
             <Icon icon={ICONS.INSTAGRAM} />
           </StyledIcon>
         </a>
-        <a href="https://twitter.com/ChelseaSpieker">
+        <a
+          href="https://twitter.com/ChelseaSpieker"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <StyledIcon>
             <Icon icon={ICONS.TWITTER} />
           </StyledIcon>
