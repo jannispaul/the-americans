@@ -179,7 +179,7 @@ const EpisodeTemplate = ({ data: { podcast }, location }) => (
       <SocialContainer>
         Share:
         <a
-          href={`https://www.facebook.com/sharer/sharer.php?u=https://the-americans.mediapioneer.com${location.pathname}/`}
+          href={`https://www.facebook.com/sharer/sharer.php?u=https://the-americans.com${location.pathname}/`}
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -189,7 +189,7 @@ const EpisodeTemplate = ({ data: { podcast }, location }) => (
         </a>
         <a
           href={`
-          https://www.linkedin.com/shareArticle?mini=true&url=https://the-americans.mediapioneer.com${location.pathname}/`}
+          https://www.linkedin.com/shareArticle?mini=true&url=https://the-americans.com${location.pathname}/`}
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -198,7 +198,7 @@ const EpisodeTemplate = ({ data: { podcast }, location }) => (
           </StyledIcon>
         </a>
         <a
-          href={`https://twitter.com/intent/tweet?text=${podcast.title} – Listen to The Americans podcast: https://the-americans.mediapioneer.com${location.pathname}/`}
+          href={`https://twitter.com/intent/tweet?text=${podcast.title} – Listen to The Americans podcast: https://the-americans.com${location.pathname}/`}
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -207,7 +207,7 @@ const EpisodeTemplate = ({ data: { podcast }, location }) => (
           </StyledIcon>
         </a>
         <a
-          href={`whatsapp://send?text=${podcast.title} – Listen to The Americans podcast: https://the-americans.mediapioneer.com${location.pathname}/`}
+          href={`whatsapp://send?text=${podcast.title} – Listen to The Americans podcast: https://the-americans.com${location.pathname}/`}
           dataAction="share/whatsapp/share"
           target="_blank"
           rel="noopener noreferrer"
@@ -217,7 +217,7 @@ const EpisodeTemplate = ({ data: { podcast }, location }) => (
           </StyledIcon>
         </a>
         <a
-          href={`mailto:?&subject=${podcast.title}&body=Listen to The Americans podcast:%0D%0Ahttps://the-americans.mediapioneer.com/${location.pathname}/`}
+          href={`mailto:?&subject=${podcast.title}&body=Listen to The Americans podcast:%0D%0Ahttps://the-americans.com/${location.pathname}/`}
           target="_blank"
           rel="noopener noreferrer"
         >
