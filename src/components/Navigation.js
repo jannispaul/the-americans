@@ -70,9 +70,12 @@ const SocialLinks = styled.div`
 
 const StyledLinks = styled.div`
   display: none;
+
   @media ${device.laptop} {
     display: inline-block;
   }
+  font-family: AvenirNextCondensed-DemiBold;
+  letter-spacing: 0.73px;
   font-size: 24px;
   font-weight: 600;
   color: #7000c0;
