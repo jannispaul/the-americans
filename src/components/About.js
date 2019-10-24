@@ -5,11 +5,12 @@ import styled from "styled-components"
 import Icon from "../components/Icon"
 import { ICONS } from "../theme/Icons"
 import { device } from "../theme/breakpoints"
+import headlineBG from "../content/images/headline-bg-4.png"
 
 const StyledAbout = styled.section`
   background: #fff2f5;
   width: 100%;
-  padding: 24px 24px;
+  padding: 48px 24px;
   text-align: center;
 
   & > div {
@@ -20,8 +21,6 @@ const StyledAbout = styled.section`
     padding: 80px 0;
   }
 `
-
-const Styledh2 = styled.h2``
 
 const SocialContainer = styled.div`
   font-family: AvenirNextCondensed-Bold;
@@ -48,10 +47,47 @@ const StyledIcon = styled.div`
   }
 `
 
+const StyledHeadline = styled.div`
+  position: relative;
+  display: block;
+  width: 100%;
+  text-align: center;
+
+  & > h2 {
+    color: #ff0045;
+    margin-bottom: 16px;
+  }
+  & img {
+    display: none;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    user-drag: none;
+    user-select: none;
+    left: 0;
+    right: 8px;
+    @media ${device.mobileM} {
+      display: block;
+      width: 232px;
+      top: 34px;
+      max-width: 430px;
+    }
+    @media ${device.tablet} {
+      width: 100%;
+      width: 290px;
+      max-width: 100%;
+      top: 50px;
+    }
+  }
+`
+
 const About = props => (
   <StyledAbout>
     <div>
-      <Styledh2>About Chelsea</Styledh2>
+      <StyledHeadline>
+        <h2>About Chelsea</h2>
+        <img src={headlineBG} alt="Airplanes flying away from headline" />
+      </StyledHeadline>
       <p>
         As an American living in Germany for over a decade, Chelsea Spieker has
         a unique view on her home country: one that gives you an inside and an

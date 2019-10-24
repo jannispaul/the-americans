@@ -38,22 +38,22 @@ const StyledImage = styled.img`
 
 const ProviderLogos = props => (
   <StyledLogos>
-    <a href="/#">
+    <a href="/" target="_blank" rel="noopener noreferrer">
       <img src={apple} alt="apple logo"></img>
     </a>
-    <a href="/#">
+    <a href="/" target="_blank" rel="noopener noreferrer">
       <img src={spotify} alt="spotify logo"></img>
     </a>
-    <a href="/#">
+    <a href="/" target="_blank" rel="noopener noreferrer">
       <img src={deezer} alt="deezer logo"></img>
     </a>
-    <a href="/#">
+    <a href="/" target="_blank" rel="noopener noreferrer">
       <StyledImage src={earliaudio} alt="earliaudio logo"></StyledImage>
     </a>
-    <a href="/#">
+    <a href="/" target="_blank" rel="noopener noreferrer">
       <img src={soundcloud} alt="soundcloud logo"></img>
     </a>
-    <a href="/#">
+    <a href="/" target="_blank" rel="noopener noreferrer">
       <img src={overcast} alt="overcast logo"></img>
     </a>
   </StyledLogos>

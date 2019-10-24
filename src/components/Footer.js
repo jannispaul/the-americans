@@ -64,17 +64,29 @@ const Footer = props => (
         <Link to="/datenschutz">Datenschutz</Link>
       </div>
       <div>
-        <a href="https://www.facebook.com">
+        <a
+          href="https://www.facebook.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <StyledIcon>
             <Icon icon={ICONS.FACEBOOK} />
           </StyledIcon>
         </a>
-        <a href="https://www.instagram.com">
+        <a
+          href="https://www.instagram.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <StyledIcon>
             <Icon icon={ICONS.INSTAGRAM} />
           </StyledIcon>
         </a>
-        <a href="https://www.twitter.com">
+        <a
+          href="https://www.twitter.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <StyledIcon>
             <Icon icon={ICONS.TWITTER} />
           </StyledIcon>
