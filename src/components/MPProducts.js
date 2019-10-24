@@ -34,7 +34,8 @@ const ProductContainer = styled.div`
   } */
   a {
     text-decoration: none;
-    font-family: Avenir-Medium;
+    font-family: Avenir-Medium, "Open Sans", -apple-system, BlinkMacSystemFont, Arial,
+    sans-serif;;
     color: #2c2c2c;
     font-size: 14px;
     letter-spacing: 0.17px;
@@ -59,7 +60,8 @@ const ProductContainer = styled.div`
   }
 `
 const PreHeadline = styled.p`
-  font-family: AvenirNextCondensed-Bold;
+  font-family: AvenirNextCondensed-Bold, "Open Sans", -apple-system,
+    BlinkMacSystemFont, Arial, sans-serif;
   font-size: 20px;
   color: #ff0045;
   text-align: center;

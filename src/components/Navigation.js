@@ -74,7 +74,8 @@ const StyledLinks = styled.div`
   @media ${device.laptop} {
     display: inline-block;
   }
-  font-family: AvenirNextCondensed-DemiBold;
+  font-family: AvenirNextCondensed-DemiBold, "Open Sans", -apple-system,
+    BlinkMacSystemFont, Arial, sans-serif;
   letter-spacing: 0.73px;
   font-size: 24px;
   font-weight: 600;
