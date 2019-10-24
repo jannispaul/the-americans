@@ -6,7 +6,7 @@ import overcast from "../content/images/providers/overcast.svg"
 import earliaudio from "../content/images/providers/earliaudio.png"
 import soundcloud from "../content/images/providers/soundcloud.svg"
 import deezer from "../content/images/providers/deezer.svg"
-import { device } from "../theme/breakpoints"
+// import { device } from "../theme/breakpoints"
 
 const StyledLogos = styled.div`
   margin-top: 32px;
@@ -28,7 +28,6 @@ const StyledLogos = styled.div`
     transition: 200ms transform ease;
     :hover {
       transform: scale(1.05);
-      transition: 200ms transform ease;
       transition: 200ms transform ease;
     }
   }

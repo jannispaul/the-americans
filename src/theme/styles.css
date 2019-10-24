@@ -7,7 +7,11 @@
 
 html {
   height: initial;
-  /* scroll-behavior:smooth; */
+  scroll-behavior: smooth !important;
+
+  @media (prefers-reduced-motion: reduce) {
+    scroll-behavior: auto;
+  }
 }
 
 body {
