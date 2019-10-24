@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-// import { device } from "../theme/breakpoints"
+import { device } from "../theme/breakpoints"
 import frameBG from "../content/images/frame-bg.png"
 import frameBGRev from "../content/images/frame-bg-2.png"
 
@@ -9,65 +9,60 @@ const StyledFrame = styled.div`
   width: 100%;
   height: 100%;
   z-index: 100;
-  & > div {
-    /* background: black; */
-    /* background: url(${frameBG}) repeat; */
-  }
-  /* border: 15px solid red; */
-  /* clip-path: polygon(
-    0% 0%,
-    100% 0%,
-    100% 100%,
-    0% 100%,
-    0% 0%,
-    16px 0%,
-    16px calc(100% - 16px),
-    calc(100% - 16px) calc(100% - 16px),
-    calc(100% - 16px) 16px,
-    16px 16px
-  ); */
-
-  z-index: 100;
   pointer-events: none;
   @supports not (pointer-events: none) {
     display: none;
   }
+  & > div {
+    background-size: contain;
+    position: absolute;
+  }
 `
 const Top = styled.div`
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 16px;
   background: url(${frameBG}) repeat-x;
-  /* background-size: contain; */
+  width: 100%;
+  top: 0;
+  height: 8px;
+  @media ${device.tablet} {
+    height: 16px;
+  }
 `
 const Bottom = styled.div`
-  position: absolute;
-  width: 100%;
-  transform: rotate(180deg);
   background: url(${frameBGRev}) repeat-x;
-  height: 16px;
+  transform: rotate(180deg);
+  width: 100%;
+  height: 8px;
   bottom: 0%;
+  @media ${device.tablet} {
+    height: 16px;
+    bottom: 0%;
+  }
 `
 const Right = styled.div`
-  position: absolute;
+  background: url(${frameBG}) repeat-x;
+  transform: rotate(90deg);
   width: 100vh;
   right: -50vh;
   top: 50vh;
-  transform: rotate(90deg);
-  background: url(${frameBG}) repeat-x;
-  height: 16px;
-  margin-right: 8px;
+  height: 8px;
+  margin-right: 4px;
+  @media ${device.tablet} {
+    height: 16px;
+    margin-right: 8px;
+  }
 `
 const Left = styled.div`
-  position: absolute;
+  background: url(${frameBGRev}) repeat-x;
+  transform: rotate(-90deg);
   width: 100vh;
   left: -50vh;
   bottom: 50%;
-  transform: rotate(-90deg);
-  background: url(${frameBGRev}) repeat-x;
-  height: 16px;
-  margin-left: 8px;
+  margin-left: 4px;
+  height: 8px;
+  @media ${device.tablet} {
+    margin-left: 8px;
+    height: 16px;
+  }
 `
 
 const Frame = props => (

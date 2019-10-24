@@ -11,14 +11,14 @@ const StyledSection = styled.section`
   background: #f7f2fb;
   width: 100%;
   text-align: center;
-  padding: 40px 16px;
+  padding: 40px 24px;
 
   & > div {
     max-width: 1256px;
     margin: auto;
   }
   @media ${device.tablet} {
-    padding: 80px 16px;
+    padding: 80px 24px;
   }
 `
 const ProductContainer = styled.div`
@@ -39,13 +39,13 @@ const ProductContainer = styled.div`
     letter-spacing: 0.17px;
     line-height: 20px;
     margin-bottom: 40px;
+    max-width: 240px;
+    margin: auto;
 
     @media ${device.laptop} {
       font-size: 22px;
       letter-spacing: 0.27px;
-      margin: auto;
       line-height: 30px;
-      max-width: 240px;
     }
     &:not(:last-of-type) {
       /* margin-right: 40px; */

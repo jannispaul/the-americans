@@ -28,7 +28,7 @@ const StyledSection = styled.section`
 const ContentContainer = styled.div`
   position: relative;
   z-index: 1;
-  padding: 16px;
+  padding: 24px;
   /* max-width: 560px; */
   a {
     color: #ff0045;

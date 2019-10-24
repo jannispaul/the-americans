@@ -12,7 +12,7 @@ const StyledRecentEpisodes = styled.section`
   flex-direction: column;
   align-items: center;
   text-align: center; */
-  padding: 0 16px;
+  padding: 0 24px;
   position: relative;
 `
 
@@ -34,13 +34,13 @@ const StyledHeadline = styled.div`
     left: 0;
     right: 8px;
     top: 8px;
-    @media ${device.tablet} {
+    @media ${device.mobileM} {
       display: block;
       width: 351px;
       top: 8px;
       max-width: 430px;
     }
-    @media ${device.laptop} {
+    @media ${device.tablet} {
       width: 100%;
       width: 501px;
       max-width: 100%;
@@ -53,7 +53,7 @@ export default () => (
   <StaticQuery
     query={graphql`
       query LatestEpisodesQuery {
-        allContentfulPodcast(limit: 3, skip: 1) {
+        allContentfulPodcast(limit: 3) {
           edges {
             node {
               title

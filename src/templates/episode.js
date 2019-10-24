@@ -44,10 +44,10 @@ export const query = graphql`
 `
 const StyledHero = styled.section`
   width: 100%;
-  padding: 36px 16px;
+  padding: 36px 24px;
   background: url(${background});
   @media ${device.tablet} {
-    padding: 90px 16px;
+    padding: 90px 24px;
   }
   & > div {
     max-width: 1256px;
@@ -80,11 +80,11 @@ const CoverImage = styled(Img)`
   }
 `
 const StyledContent = styled.article`
-  padding: 32px 16px;
+  padding: 32px 24px;
   max-width: 740px;
   margin: auto;
   @media ${device.tablet} {
-    padding: 100px 16px;
+    padding: 100px 24px;
   }
 
   & figure {
@@ -145,7 +145,7 @@ const EpisodeTemplate = ({ data: { podcast }, location }) => (
           <p>{podcast.createdAt}</p>
           <h1>{podcast.title}</h1>
           <PodigeePlayer
-            theme="default-dark"
+            theme="minimal"
             source={podcast.podcastSlug}
           ></PodigeePlayer>
         </ContentContainer>
@@ -175,7 +175,7 @@ const EpisodeTemplate = ({ data: { podcast }, location }) => (
       <SocialContainer>
         Share:
         <a
-          href={`https://www.facebook.com/sharer/sharer.php?u=https://the-americans.mediapioneer.com${location.pathname}`}
+          href={`https://www.facebook.com/sharer/sharer.php?u=https://the-americans.mediapioneer.com${location.pathname}/`}
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -185,7 +185,7 @@ const EpisodeTemplate = ({ data: { podcast }, location }) => (
         </a>
         <a
           href={`
-          https://www.linkedin.com/shareArticle?mini=true&url=https://the-americans.mediapioneer.com${location.pathname}&title=&summary=– ${podcast.title} – Listen to The Americans podcast: https://the-americans.mediapioneer.com${location.pathname}:&source=`}
+          https://www.linkedin.com/shareArticle?mini=true&url=https://the-americans.mediapioneer.com${location.pathname}/`}
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -194,7 +194,7 @@ const EpisodeTemplate = ({ data: { podcast }, location }) => (
           </StyledIcon>
         </a>
         <a
-          href={`https://twitter.com/intent/tweet?text=${podcast.title} – Listen to The Americans podcast: https://the-americans.mediapioneer.com${location.pathname}`}
+          href={`https://twitter.com/intent/tweet?text=${podcast.title} – Listen to The Americans podcast: https://the-americans.mediapioneer.com${location.pathname}/`}
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -203,7 +203,7 @@ const EpisodeTemplate = ({ data: { podcast }, location }) => (
           </StyledIcon>
         </a>
         <a
-          href={`whatsapp://send?text=${podcast.title} – Listen to The Americans podcast: https://the-americans.mediapioneer.com${location.pathname}`}
+          href={`whatsapp://send?text=${podcast.title} – Listen to The Americans podcast: https://the-americans.mediapioneer.com${location.pathname}/`}
           dataAction="share/whatsapp/share"
           target="_blank"
           rel="noopener noreferrer"
@@ -213,7 +213,7 @@ const EpisodeTemplate = ({ data: { podcast }, location }) => (
           </StyledIcon>
         </a>
         <a
-          href={`mailto:?&subject=${podcast.title}&body=Listen to The Americans podcast:%0D%0Ahttps://the-americans.mediapioneer.com/${location.pathname}`}
+          href={`mailto:?&subject=${podcast.title}&body=Listen to The Americans podcast:%0D%0Ahttps://the-americans.mediapioneer.com/${location.pathname}/`}
           target="_blank"
           rel="noopener noreferrer"
         >

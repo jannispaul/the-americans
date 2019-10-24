@@ -16,7 +16,7 @@ const StyledNav = styled.header`
   }
 
   & > div {
-    padding: 0 16px;
+    padding: 0 24px;
     max-width: 100%;
     width: 1256px;
     margin: auto;
