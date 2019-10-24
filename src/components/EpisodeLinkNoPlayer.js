@@ -13,8 +13,7 @@ const Episode = styled(Link)`
   padding: 32px 0;
   transition: background 0.2s;
   margin: 16px;
-  max-width: 300px;
-
+  max-width: 250px;
   & > h4 {
     margin: 16px auto;
     font-family: Avenir-Medium;
@@ -24,9 +23,10 @@ const Episode = styled(Link)`
     line-height: 20px;
     @media ${device.tablet} {
       line-height: 30px;
-      font-size: 22px;
+      font-size: 20px;
       letter-spacing: 0.27px;
     }
+    transition: 200ms transform ease;
   }
   :nth-of-type(2) {
     display: none;
@@ -34,6 +34,14 @@ const Episode = styled(Link)`
   @media ${device.tablet} {
     :nth-of-type(2) {
       display: inline-block;
+    }
+  }
+
+  transition: 500ms transform ease;
+  :hover {
+    & div {
+      transform: scale(1.03);
+      transition: 200ms transform ease;
     }
   }
 `
