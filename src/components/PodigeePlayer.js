@@ -9,8 +9,8 @@ class StaticPodigeePlayer extends React.Component {
   jsonConfig() {
     return JSON.stringify({
       episode: {
-        coverUrl:
-          "https://images.podigee.com/90x,sabagK4V_yGDanwc5brVBURwuLdbKAb5BQ1rx5zQcd9o=/https://cdn.podigee.com/uploads/u1/72b01048-d910-4809-8e97-3b25bb4561b1.png",
+        // coverUrl:
+        //   "https://images.podigee.com/90x,sabagK4V_yGDanwc5brVBURwuLdbKAb5BQ1rx5zQcd9o=/https://cdn.podigee.com/uploads/u1/72b01048-d910-4809-8e97-3b25bb4561b1.png",
         media: {
           mp3:
             // "https://cdn.podigee.com/media/podcast_4411_podigee_podcast_news_episode_11_zahlenzauber_bei_podigee.mp3?v=1565954088&source=web_download&dl=1",
@@ -18,14 +18,14 @@ class StaticPodigeePlayer extends React.Component {
             `${this.props.source}`,
         },
       },
-      // options: {
-      //   theme: {
-      //     html:
-      //       "http://cdn.podigee.com/podcast-player/themes/zon-minimal/index.html",
-
-      //     css: `/podcast-player/themes/zon-minimal/index.css?6d54d`,
-      //   },
-      // },
+      options: {
+        theme: `${this.props.theme}`,
+        // {
+        // html:
+        //   "http://cdn.podigee.com/podcast-player/themes/zon-minimal/index.html",
+        // css: `/podcast-player/themes/zon-minimal/index.css?6d54d`,
+        // },
+      },
     })
   }
 
