@@ -65,7 +65,7 @@ const Footer = props => (
       </div>
       <div>
         <a
-          href="https://www.facebook.com"
+          href="https://www.facebook.com/the.americans.podcast"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -74,7 +74,7 @@ const Footer = props => (
           </StyledIcon>
         </a>
         <a
-          href="https://www.instagram.com"
+          href="https://www.instagram.com/chelsea.spieker"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -83,12 +83,21 @@ const Footer = props => (
           </StyledIcon>
         </a>
         <a
-          href="https://www.twitter.com"
+          href="https://twitter.com/ChelseaSpieker"
           target="_blank"
           rel="noopener noreferrer"
         >
           <StyledIcon>
             <Icon icon={ICONS.TWITTER} />
+          </StyledIcon>
+        </a>
+        <a
+          href="https://www.linkedin.com/in/chelsea-spieker-2859b016/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <StyledIcon>
+            <Icon icon={ICONS.LINKEDIN} />
           </StyledIcon>
         </a>
       </div>
