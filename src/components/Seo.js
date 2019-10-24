@@ -20,6 +20,7 @@ function SEO({ description, lang, meta, keywords, title, index, ogimage }) {
             title
             description
             author
+            keywords
           }
         }
       }
@@ -30,6 +31,7 @@ function SEO({ description, lang, meta, keywords, title, index, ogimage }) {
   const ogImageUrl = ogimage || defaultOpenGraphImage
   // const ogImageUrl =
   //   site.siteMetadata.siteUrl + (ogimage || defaultOpenGraphImage)
+  // const keywords = site.siteMetadata.keywords
 
   return (
     <Helmet
@@ -104,7 +106,7 @@ function SEO({ description, lang, meta, keywords, title, index, ogimage }) {
 SEO.defaultProps = {
   lang: `de`,
   meta: [],
-  keywords: [],
+  keywords: ["podcast", "america", "interview", "media pioneer", "steingart"],
   index: `index`,
 }
 
