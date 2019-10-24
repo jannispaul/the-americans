@@ -11,7 +11,7 @@ import ScrollAnchor from "../components/ScrollAnchor"
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="The Americans" lang="de" />
+    <SEO title="The Americans – Podcast with Chelsea Spieker" lang="de" />
     <Hero></Hero>
     <ScrollAnchor id="episodes"></ScrollAnchor>
     <RecentEpisodes></RecentEpisodes>
