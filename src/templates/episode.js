@@ -16,6 +16,7 @@ import PodigeePlayer from "../components/PodigeePlayer"
 import ContentfulRichTextImage from "../components/ContentfulRichTextImage"
 import KeepInTouch from "../components/KeepInTouch"
 import MoreOfTheAmericans from "../components/MoreOfTheAmericans"
+import SmallLabel from "../components/SmallLabel"
 
 export const query = graphql`
   query($slug: String!) {
@@ -64,6 +65,9 @@ const StyledHero = styled.section`
 `
 const ContentContainer = styled.section`
   order: -1;
+  & > h1 {
+    color: #7000c0;
+  }
 `
 const CoverImage = styled(Img)`
   width: 220px;
@@ -142,7 +146,7 @@ const EpisodeTemplate = ({ data: { podcast }, location }) => (
           alt={podcast.image.description}
         />
         <ContentContainer>
-          <p>{podcast.createdAt}</p>
+          <SmallLabel>{podcast.createdAt}</SmallLabel>
           <h1>{podcast.title}</h1>
           <PodigeePlayer
             theme="minimal"
