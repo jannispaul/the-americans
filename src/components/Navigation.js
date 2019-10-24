@@ -115,17 +115,29 @@ const Navigation = props => (
       </StyledLogo>
 
       <SocialLinks>
-        <a href="https://business.facebook.com/the.americans.podcast">
+        <a
+          href="https://business.facebook.com/the.americans.podcast"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <StyledIcon>
             <Icon icon={ICONS.LINKEDIN} />
           </StyledIcon>
         </a>
-        <a href="https://www.instagram.com/chelsea.spieker">
+        <a
+          href="https://www.instagram.com/chelsea.spieker"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <StyledIcon>
             <Icon icon={ICONS.INSTAGRAM} />
           </StyledIcon>
         </a>
-        <a href="https://twitter.com/ChelseaSpieker">
+        <a
+          href="https://twitter.com/ChelseaSpieker"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <StyledIcon>
             <Icon icon={ICONS.TWITTER} />
           </StyledIcon>
