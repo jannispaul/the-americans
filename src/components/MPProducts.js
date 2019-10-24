@@ -2,9 +2,9 @@ import React from "react"
 import styled from "styled-components"
 import { device } from "../theme/breakpoints"
 import MBPodcastImage from "./ImageComponents/MBPodcastImage"
-import MBNewsletterImage from "./ImageComponents/MBNewsletterImage"
-import PioneerBlogImage from "./ImageComponents/PioneerBlogImage"
-import PioneerOneImage from "./ImageComponents/PioneerOneImage"
+// import MBNewsletterImage from "./ImageComponents/MBNewsletterImage"
+// import PioneerBlogImage from "./ImageComponents/PioneerBlogImage"
+// import PioneerOneImage from "./ImageComponents/PioneerOneImage"
 import mpLogo from "../content/images/MP-logo.svg"
 
 const StyledSection = styled.section`
@@ -24,14 +24,14 @@ const StyledSection = styled.section`
 const ProductContainer = styled.div`
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(2, minmax(100px, 1fr));
+  /* grid-template-columns: repeat(2, minmax(100px, 1fr)); */
   margin-top: 24px;
   grid-gap: 12px;
   justify-content: center;
 
-  @media ${device.laptop} {
+  /* @media ${device.laptop} {
     grid-template-columns: repeat(4, minmax(192px, 1fr));
-  }
+  } */
   a {
     text-decoration: none;
     font-family: Avenir-Medium;
@@ -79,7 +79,7 @@ const MPProducts = props => (
           <MBPodcastImage></MBPodcastImage>
           <p>Steingarts Morning Briefing Podcast</p>
         </a>
-        <a
+        {/* <a
           href="https://www.gaborsteingart.com/morning-briefing/"
           target="_blank"
           rel="noopener noreferrer"
@@ -102,7 +102,7 @@ const MPProducts = props => (
         >
           <PioneerOneImage></PioneerOneImage>
           <p>Pioneer One – das Redaktionsschiff</p>
-        </a>
+        </a> */}
       </ProductContainer>
     </div>
   </StyledSection>
