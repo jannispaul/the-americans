@@ -28,7 +28,8 @@ const PlayerContainer = styled.div`
   }
 `
 const StyledLink = styled(Link)`
-  font-family: AvenirNextCondensed-DemiBold;
+  font-family: AvenirNextCondensed-DemiBold, "Open Sans", -apple-system,
+    BlinkMacSystemFont, Arial, sans-serif;
   font-size: 16px;
   color: #ff0045;
   letter-spacing: 0.25px;

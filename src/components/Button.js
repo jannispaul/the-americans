@@ -5,7 +5,8 @@ import styled from "styled-components"
 const StyledButton = styled(Link)`
   display: block;
   margin: auto;
-  font-family: "AvenirNextCondensed-Bold";
+  font-family: "AvenirNextCondensed-Bold", "Open Sans", -apple-system,
+    BlinkMacSystemFont, Arial, sans-serif;
   font-size: 18px;
   color: #ff0045;
   border: 3px solid #ff0045;

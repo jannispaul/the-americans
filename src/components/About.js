@@ -23,7 +23,8 @@ const StyledAbout = styled.section`
 `
 
 const SocialContainer = styled.div`
-  font-family: AvenirNextCondensed-Bold;
+  font-family: AvenirNextCondensed-Bold, "Open Sans", -apple-system,
+    BlinkMacSystemFont, Arial, sans-serif;
   font-size: 21.6px;
   color: #ff0045;
   letter-spacing: 0.34px;
