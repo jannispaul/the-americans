@@ -199,7 +199,7 @@ const EpisodeTemplate = ({ data: { podcast, ogimage, site }, location }) => {
         <SocialContainer>
           Share:
           <a
-            href={`https://www.facebook.com/sharer/sharer.php?u=${site.siteMetadata.siteUrl}${location.pathname}/`}
+            href={`https://www.facebook.com/sharer/sharer.php?u=${site.siteMetadata.siteUrl}${location.pathname}`}
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -209,7 +209,7 @@ const EpisodeTemplate = ({ data: { podcast, ogimage, site }, location }) => {
           </a>
           <a
             href={`
-          https://www.linkedin.com/shareArticle?mini=true&url=${site.siteMetadata.siteUrl}${location.pathname}/`}
+          https://www.linkedin.com/shareArticle?mini=true&url=${site.siteMetadata.siteUrl}${location.pathname}`}
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -218,7 +218,7 @@ const EpisodeTemplate = ({ data: { podcast, ogimage, site }, location }) => {
             </StyledIcon>
           </a>
           <a
-            href={`https://twitter.com/intent/tweet?text=${podcast.title} – Listen to The Americans podcast: ${site.siteMetadata.siteUrl}${location.pathname}/`}
+            href={`https://twitter.com/intent/tweet?text=${podcast.title} – Listen to The Americans podcast: ${site.siteMetadata.siteUrl}${location.pathname}`}
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -227,7 +227,7 @@ const EpisodeTemplate = ({ data: { podcast, ogimage, site }, location }) => {
             </StyledIcon>
           </a>
           <a
-            href={`whatsapp://send?text=${podcast.title} – Listen to The Americans podcast: ${site.siteMetadata.siteUrl}${location.pathname}/`}
+            href={`whatsapp://send?text=${podcast.title} – Listen to The Americans podcast: ${site.siteMetadata.siteUrl}${location.pathname}`}
             dataAction="share/whatsapp/share"
             target="_blank"
             rel="noopener noreferrer"
@@ -237,7 +237,7 @@ const EpisodeTemplate = ({ data: { podcast, ogimage, site }, location }) => {
             </StyledIcon>
           </a>
           <a
-            href={`mailto:?&subject=${podcast.title}&body=Listen to The Americans podcast:%0D%0A${site.siteMetadata.siteUrl}${location.pathname}/`}
+            href={`mailto:?&subject=${podcast.title}&body=Listen to The Americans podcast:%0D%0A${site.siteMetadata.siteUrl}${location.pathname}`}
             target="_blank"
             rel="noopener noreferrer"
           >
