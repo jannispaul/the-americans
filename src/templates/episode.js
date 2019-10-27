@@ -17,9 +17,8 @@ import ContentfulRichTextImage from "../components/ContentfulRichTextImage"
 import KeepInTouch from "../components/KeepInTouch"
 // import MoreOfTheAmericans from "../components/MoreOfTheAmericans"
 import SmallLabel from "../components/SmallLabel"
-
 export const query = graphql`
-  query($slug: String!) {
+  query($slug: String!, $filename: String!) {
     podcast: contentfulPodcast(slug: { eq: $slug }) {
       body {
         json
@@ -28,6 +27,9 @@ export const query = graphql`
         description
       }
       image {
+        file {
+          url
+        }
         sizes(maxWidth: 1000) {
           ...GatsbyContentfulSizes_withWebp
         }
@@ -40,6 +42,17 @@ export const query = graphql`
       slug
       podcastSlug
       createdAt(formatString: "DD. MMMM YYYY", locale: "de-DE")
+    }
+    ogimage: allImageSharp(
+      filter: { fixed: { originalName: { eq: $filename } } }
+    ) {
+      edges {
+        node {
+          resize {
+            src
+          }
+        }
+      }
     }
   }
 `
@@ -133,105 +146,107 @@ const Seperator = styled.hr`
   background: #f7f2fb;
   border: none;
 `
-const EpisodeTemplate = ({ data: { podcast }, location }) => (
-  <Layout>
-    <SEO
-      title={podcast.title}
-      ogimage={podcast.image.resize.src}
-      description={podcast.description.description}
-    />
-    <StyledHero>
-      <div>
-        <CoverImage
-          sizes={podcast.image.sizes}
-          alt={podcast.image.description}
-        />
-        <ContentContainer>
-          <SmallLabel>{podcast.createdAt}</SmallLabel>
-          <h1>{podcast.title}</h1>
-          <PodigeePlayer
-            theme="minimal"
-            source={podcast.podcastSlug}
-          ></PodigeePlayer>
-        </ContentContainer>
-      </div>
-    </StyledHero>
-    <StyledContent>
-      <div>
-        {documentToReactComponents(podcast.body.json, {
-          renderNode: {
-            [BLOCKS.EMBEDDED_ASSET]: node => (
-              <div>
-                <figure>
-                  <ContentfulRichTextImage
-                    node={node}
-                    richTextImageWidth="740"
-                    richTextImageQuality="60"
-                  ></ContentfulRichTextImage>
-                  <figcaption>
-                    {node.data.target.fields.description["de"]}
-                  </figcaption>
-                </figure>
-              </div>
-            ),
-          },
-        })}
-      </div>
-      <SocialContainer>
-        Share:
-        <a
-          href={`https://www.facebook.com/sharer/sharer.php?u=https://the-americans.com${location.pathname}/`}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <StyledIcon>
-            <Icon icon={ICONS.FACEBOOK} />
-          </StyledIcon>
-        </a>
-        <a
-          href={`
+const EpisodeTemplate = ({ data: { podcast, ogimage }, location }) => {
+  return (
+    <Layout>
+      <SEO
+        title={podcast.title}
+        ogimage={ogimage.edges[0].node.resize.src}
+        description={podcast.description.description}
+      />
+      <StyledHero>
+        <div>
+          <CoverImage
+            sizes={podcast.image.sizes}
+            alt={podcast.image.description}
+          />
+          <ContentContainer>
+            <SmallLabel>{podcast.createdAt}</SmallLabel>
+            <h1>{podcast.title}</h1>
+            <PodigeePlayer
+              theme="minimal"
+              source={podcast.podcastSlug}
+            ></PodigeePlayer>
+          </ContentContainer>
+        </div>
+      </StyledHero>
+      <StyledContent>
+        <div>
+          {documentToReactComponents(podcast.body.json, {
+            renderNode: {
+              [BLOCKS.EMBEDDED_ASSET]: node => (
+                <div>
+                  <figure>
+                    <ContentfulRichTextImage
+                      node={node}
+                      richTextImageWidth="740"
+                      richTextImageQuality="60"
+                    ></ContentfulRichTextImage>
+                    <figcaption>
+                      {node.data.target.fields.description["de"]}
+                    </figcaption>
+                  </figure>
+                </div>
+              ),
+            },
+          })}
+        </div>
+        <SocialContainer>
+          Share:
+          <a
+            href={`https://www.facebook.com/sharer/sharer.php?u=https://the-americans.com${location.pathname}/`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <StyledIcon>
+              <Icon icon={ICONS.FACEBOOK} />
+            </StyledIcon>
+          </a>
+          <a
+            href={`
           https://www.linkedin.com/shareArticle?mini=true&url=https://the-americans.com${location.pathname}/`}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <StyledIcon>
-            <Icon icon={ICONS.LINKEDIN} />
-          </StyledIcon>
-        </a>
-        <a
-          href={`https://twitter.com/intent/tweet?text=${podcast.title} – Listen to The Americans podcast: https://the-americans.com${location.pathname}/`}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <StyledIcon>
-            <Icon icon={ICONS.TWITTER} />
-          </StyledIcon>
-        </a>
-        <a
-          href={`whatsapp://send?text=${podcast.title} – Listen to The Americans podcast: https://the-americans.com${location.pathname}/`}
-          dataAction="share/whatsapp/share"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <StyledIcon>
-            <Icon icon={ICONS.WHATSAPP} />
-          </StyledIcon>
-        </a>
-        <a
-          href={`mailto:?&subject=${podcast.title}&body=Listen to The Americans podcast:%0D%0Ahttps://the-americans.com/${location.pathname}/`}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <StyledIcon>
-            <Icon icon={ICONS.EMAIL} />
-          </StyledIcon>
-        </a>
-      </SocialContainer>
-    </StyledContent>
-    <Seperator></Seperator>
-    {/* <MoreOfTheAmericans></MoreOfTheAmericans> */}
-    <KeepInTouch></KeepInTouch>
-  </Layout>
-)
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <StyledIcon>
+              <Icon icon={ICONS.LINKEDIN} />
+            </StyledIcon>
+          </a>
+          <a
+            href={`https://twitter.com/intent/tweet?text=${podcast.title} – Listen to The Americans podcast: https://the-americans.com${location.pathname}/`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <StyledIcon>
+              <Icon icon={ICONS.TWITTER} />
+            </StyledIcon>
+          </a>
+          <a
+            href={`whatsapp://send?text=${podcast.title} – Listen to The Americans podcast: https://the-americans.com${location.pathname}/`}
+            dataAction="share/whatsapp/share"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <StyledIcon>
+              <Icon icon={ICONS.WHATSAPP} />
+            </StyledIcon>
+          </a>
+          <a
+            href={`mailto:?&subject=${podcast.title}&body=Listen to The Americans podcast:%0D%0Ahttps://the-americans.com/${location.pathname}/`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <StyledIcon>
+              <Icon icon={ICONS.EMAIL} />
+            </StyledIcon>
+          </a>
+        </SocialContainer>
+      </StyledContent>
+      <Seperator></Seperator>
+      {/* <MoreOfTheAmericans></MoreOfTheAmericans> */}
+      <KeepInTouch></KeepInTouch>
+    </Layout>
+  )
+}
 
 export default EpisodeTemplate

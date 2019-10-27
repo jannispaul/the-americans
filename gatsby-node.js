@@ -16,6 +16,11 @@ exports.createPages = ({ graphql, actions }) => {
                   title
                   id
                   slug
+                  image {
+                    file {
+                      fileName
+                    }
+                  }
                 }
               }
             }
@@ -34,6 +39,7 @@ exports.createPages = ({ graphql, actions }) => {
             component: episode,
             context: {
               slug: item.node.slug,
+              filename: item.node.image.file.fileName,
             },
           })
         })
