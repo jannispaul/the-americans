@@ -11,7 +11,16 @@ import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 import defaultOpenGraphImage from "../content/images/social-image.jpg"
 
-function SEO({ description, lang, meta, keywords, title, index, ogimage }) {
+function SEO({
+  description,
+  lang,
+  meta,
+  keywords,
+  title,
+  index,
+  ogimage,
+  siteUrl,
+}) {
   const { site } = useStaticQuery(
     graphql`
       query SeoQuery {
@@ -21,6 +30,7 @@ function SEO({ description, lang, meta, keywords, title, index, ogimage }) {
             description
             author
             keywords
+            siteUrl
           }
         }
       }
