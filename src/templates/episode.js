@@ -15,7 +15,7 @@ import SEO from "../components/Seo"
 import PodigeePlayer from "../components/PodigeePlayer"
 import ContentfulRichTextImage from "../components/ContentfulRichTextImage"
 import KeepInTouch from "../components/KeepInTouch"
-import MoreOfTheAmericans from "../components/MoreOfTheAmericans"
+// import MoreOfTheAmericans from "../components/MoreOfTheAmericans"
 import SmallLabel from "../components/SmallLabel"
 
 export const query = graphql`

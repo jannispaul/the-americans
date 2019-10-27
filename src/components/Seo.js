@@ -79,15 +79,15 @@ function SEO({ description, lang, meta, keywords, title, index, ogimage }) {
         },
         {
           name: `twitter:image`,
-          content: ogImageUrl,
+          content: `https://optimistic-swanson-d07dac.netlify.com${ogImageUrl}`,
         },
         {
           property: `og:image`,
-          content: ogImageUrl,
+          content: `https://optimistic-swanson-d07dac.netlify.com${ogImageUrl}`,
         },
         {
           itemprop: `image`,
-          content: ogImageUrl,
+          content: `https://optimistic-swanson-d07dac.netlify.com${ogImageUrl}`,
         },
       ]
         .concat(
