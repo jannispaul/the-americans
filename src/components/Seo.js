@@ -89,15 +89,15 @@ function SEO({
         },
         {
           name: `twitter:image`,
-          content: `https://optimistic-swanson-d07dac.netlify.com${ogImageUrl}`,
+          content: `${siteUrl}${ogImageUrl}`,
         },
         {
           property: `og:image`,
-          content: `https://optimistic-swanson-d07dac.netlify.com${ogImageUrl}`,
+          content: `${siteUrl}${ogImageUrl}`,
         },
         {
           itemprop: `image`,
-          content: `https://optimistic-swanson-d07dac.netlify.com${ogImageUrl}`,
+          content: `${siteUrl}${ogImageUrl}`,
         },
       ]
         .concat(
