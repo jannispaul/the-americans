@@ -60,14 +60,29 @@ const Footer = props => (
   <StyledFooter>
     <div>
       <div>
-        <a href="https://mediapioneer.com/datenschutz/">Impressum</a>
-        <a href="https://mediapioneer.com/impressum/">Datenschutz</a>
+        <a
+          href="https://mediapioneer.com/datenschutz/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Link zum Datenschutz"
+        >
+          Impressum
+        </a>
+        <a
+          href="https://mediapioneer.com/impressum/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Link zum Impressum"
+        >
+          Datenschutz
+        </a>
       </div>
       <div>
         <a
           href="https://www.facebook.com/the.americans.podcast"
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="The americans podcast on facebook"
         >
           <StyledIcon>
             <Icon icon={ICONS.FACEBOOK} />
@@ -77,6 +92,7 @@ const Footer = props => (
           href="https://www.instagram.com/chelsea.spieker"
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="Chelsea Spieker on instagram"
         >
           <StyledIcon>
             <Icon icon={ICONS.INSTAGRAM} />
@@ -86,6 +102,7 @@ const Footer = props => (
           href="https://twitter.com/ChelseaSpieker"
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="Chelsea Spieker on twitter"
         >
           <StyledIcon>
             <Icon icon={ICONS.TWITTER} />
@@ -95,6 +112,7 @@ const Footer = props => (
           href="https://www.linkedin.com/in/chelsea-spieker-2859b016/"
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="Chelsea Spieker on linkedIn"
         >
           <StyledIcon>
             <Icon icon={ICONS.LINKEDIN} />
