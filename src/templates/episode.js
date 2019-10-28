@@ -34,7 +34,7 @@ export const query = graphql`
           ...GatsbyContentfulSizes_withWebp
         }
         description
-        resize(width: 900, quality: 90) {
+        resize(width: 900, quality: 60) {
           src
         }
       }
