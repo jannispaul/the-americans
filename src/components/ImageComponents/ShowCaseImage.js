@@ -24,11 +24,6 @@ const StyledImage = styled(Img)`
   @media ${device.tablet} {
     margin-left: -10vw;
     grid-column: 1/3;
-    /* position: absolute !important; */
-    /* width: 70%;
-    z-index: 0;
-    top: 0;
-    left: 0; */
   }
 `
 
