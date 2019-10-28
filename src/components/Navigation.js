@@ -99,66 +99,72 @@ const StyledIcon = styled.div`
   }
 `
 
-const Navigation = props => (
-  <StyledNav>
-    <div>
-      <StyledLinks>
-        <Link to="/">Podcast</Link>
-        <Link to="/#episodes">Episodes</Link>
-        <Link to="/#host">Host</Link>
-      </StyledLinks>
+const Navigation = props => {
+  if (typeof window !== "undefined") {
+    // eslint-disable-next-line global-require
+    require("smooth-scroll")('a[href*="#"]')
+  }
+  return (
+    <StyledNav>
+      <div>
+        <StyledLinks>
+          <Link to="/">Podcast</Link>
+          <Link to="/#episodes">Episodes</Link>
+          <Link to="/#host">Host</Link>
+        </StyledLinks>
 
-      <StyledLogo to="/">
-        <img
-          src={Logo}
-          alt="The Americans Logo mit Sternen und in Blau und Rot"
-        />
-      </StyledLogo>
+        <StyledLogo to="/">
+          <img
+            src={Logo}
+            alt="The Americans Logo mit Sternen und in Blau und Rot"
+          />
+        </StyledLogo>
 
-      <SocialLinks>
-        <a
-          href="https://www.facebook.com/the.americans.podcast"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="The americans podcast on facebook"
-        >
-          <StyledIcon>
-            <Icon icon={ICONS.FACEBOOK} />
-          </StyledIcon>
-        </a>
-        <a
-          href="https://www.instagram.com/chelsea.spieker"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Chelsea Spieker on instagram"
-        >
-          <StyledIcon>
-            <Icon icon={ICONS.INSTAGRAM} />
-          </StyledIcon>
-        </a>
-        <a
-          href="https://twitter.com/ChelseaSpieker"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Chelsea Spieker on twitter"
-        >
-          <StyledIcon>
-            <Icon icon={ICONS.TWITTER} />
-          </StyledIcon>
-        </a>
-        <a
-          href="https://www.linkedin.com/in/chelsea-spieker-2859b016/"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Chelsea Spieker on linkedIn"
-        >
-          <StyledIcon>
-            <Icon icon={ICONS.LINKEDIN} />
-          </StyledIcon>
-        </a>
-      </SocialLinks>
-    </div>
-  </StyledNav>
-)
+        <SocialLinks>
+          <a
+            href="https://www.facebook.com/the.americans.podcast"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="The americans podcast on facebook"
+          >
+            <StyledIcon>
+              <Icon icon={ICONS.FACEBOOK} />
+            </StyledIcon>
+          </a>
+          <a
+            href="https://www.instagram.com/chelsea.spieker"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Chelsea Spieker on instagram"
+          >
+            <StyledIcon>
+              <Icon icon={ICONS.INSTAGRAM} />
+            </StyledIcon>
+          </a>
+          <a
+            href="https://twitter.com/ChelseaSpieker"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Chelsea Spieker on twitter"
+          >
+            <StyledIcon>
+              <Icon icon={ICONS.TWITTER} />
+            </StyledIcon>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/chelsea-spieker-2859b016/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Chelsea Spieker on linkedIn"
+          >
+            <StyledIcon>
+              <Icon icon={ICONS.LINKEDIN} />
+            </StyledIcon>
+          </a>
+        </SocialLinks>
+      </div>
+    </StyledNav>
+  )
+}
 
 export default Navigation
