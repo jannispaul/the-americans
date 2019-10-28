@@ -27,6 +27,10 @@ const PlayerContainer = styled.div`
     margin-right: 16px;
   }
 `
+const StyledH3Link = styled(Link)`
+  text-decoration: none;
+`
+
 const StyledLink = styled(Link)`
   font-family: AvenirNextCondensed-DemiBold, "Open Sans", -apple-system,
     BlinkMacSystemFont, Arial, sans-serif;
@@ -39,7 +43,9 @@ const StyledLink = styled(Link)`
 const EpisodeLink = props => (
   <Episode>
     <SmallLabel>{props.date}</SmallLabel>
-    <h3>{props.title}</h3>
+    <StyledH3Link to={props.slug}>
+      <h3>{props.title}</h3>
+    </StyledH3Link>
     <PlayerContainer>
       <Img sizes={props.image.sizes} alt={props.image.description} />
       <div></div>
