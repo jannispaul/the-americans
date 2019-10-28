@@ -78,7 +78,7 @@ const StyledHero = styled.section`
     }
   }
   & p {
-    font-size: 10px;
+    font-size: 12px;
   }
 `
 const ContentContainer = styled.section`
