@@ -41,16 +41,28 @@ const ProviderLogos = props => (
     <a href="/" target="_blank" rel="noopener noreferrer">
       <img src={apple} alt="apple logo"></img>
     </a>
-    <a href="/" target="_blank" rel="noopener noreferrer">
+    <a
+      href="https://open.spotify.com/show/6Fe93skKJuVnpnAbRZpVGS"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       <img src={spotify} alt="spotify logo"></img>
     </a>
-    <a href="/" target="_blank" rel="noopener noreferrer">
+    <a
+      href="https://www.deezer.com/de/show/630472"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       <img src={deezer} alt="deezer logo"></img>
     </a>
     <a href="/" target="_blank" rel="noopener noreferrer">
       <StyledImage src={earliaudio} alt="earliaudio logo"></StyledImage>
     </a>
-    <a href="/" target="_blank" rel="noopener noreferrer">
+    <a
+      href="https://soundcloud.com/user-652439363"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       <img src={soundcloud} alt="soundcloud logo"></img>
     </a>
     <a href="/" target="_blank" rel="noopener noreferrer">
