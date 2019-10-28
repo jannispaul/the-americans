@@ -21,7 +21,7 @@ module.exports = {
   siteMetadata: {
     title: `The Americans – Podcast with Chelsea Spieker`,
     description: `★ This interview podcast is about today’s America. It takes a closer look at politics and society, and has a special focus on people and their stories. ★`,
-    author: `Media Pioneer, Chelsea Spieker`,
+    author: `Chelsea Spieker, Media Pioneer`,
     siteUrl: `https://the-americans.com`,
     keywords: ``,
   },
