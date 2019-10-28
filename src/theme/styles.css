@@ -7,7 +7,6 @@
 
 html {
   height: initial;
-  scroll-behavior: smooth !important;
 
   @media (prefers-reduced-motion: reduce) {
     scroll-behavior: auto;
