@@ -8,8 +8,8 @@ const StyledButton = styled(Link)`
   font-family: "AvenirNextCondensed-Bold", "Open Sans", -apple-system,
     BlinkMacSystemFont, Arial, sans-serif;
   font-size: 18px;
-  color: #ff0045;
-  border: 3px solid #ff0045;
+  color: #eb003f;
+  border: 3px solid #eb003f;
   border-radius: 7.2px;
   text-align: center;
   text-decoration: none;
