@@ -31,7 +31,7 @@ const ContentContainer = styled.div`
   padding: 24px;
   /* max-width: 560px; */
   a {
-    color: #ff0045;
+    color: #eb003f;
   }
   @media ${device.tablet} {
     grid-column: 3/5;
