@@ -52,7 +52,7 @@
 .podcast-player .progress-bar {
   display: inline-block;
   left: 20px;
-  padding-top: 20px;
+  /* padding-top: 20px; */
   position: relative;
   top: -12px;
   width: calc(100% - 84px);
@@ -72,6 +72,7 @@
   cursor: -moz-grab;
   cursor: -webkit-grab;
   min-height: 6px;
+  height: 6px;
   position: relative;
   /* width: calc(100% - 71px); */
 }
@@ -189,13 +190,13 @@
 .podcast-player .progress-bar {
   grid-column: 2;
   grid-row: 1;
-  padding-top: 10px;
+  /* padding-top: 10px; */
   top: 0;
-  height: 6px;
   display: grid;
   width: 100%;
   grid-template-columns: 1fr 74px;
   grid-template-rows: 1fr;
+  align-items: center;
 }
 .podcast-player .progress-bar .progress-bar-rail {
   width: 100%;
