@@ -19,12 +19,11 @@ class StaticPodigeePlayer extends React.Component {
         },
       },
       options: {
-        theme: `${this.props.theme}`,
-        // {
-        // html:
-        //   "http://cdn.podigee.com/podcast-player/themes/zon-minimal/index.html",
-        // css: `/podcast-player/themes/zon-minimal/index.css?6d54d`,
-        // },
+        // theme: `${this.props.theme}`,
+        theme: {
+          html: "https://the-americans.com/podigee/theme.html",
+          css: `https://the-americans.com/podigee/theme.css`,
+        },
       },
     })
   }
