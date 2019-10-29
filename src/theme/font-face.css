@@ -41,9 +41,9 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: AmericanTypewriter-CondensedBold, "Courier New Bold";
+  font-family: AmericanTypewriter-CondensedBold, "Courier New";
   line-height: 1.2;
-  font-weight: 400;
+  font-weight: 600;
 }
 h1 {
   font-size: 32px;
