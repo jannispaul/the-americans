@@ -16,6 +16,7 @@ const StyledLogos = styled.div`
   grid-template-columns: repeat(3, minmax(100px, 1fr));
   grid-gap: 10px;
   justify-content: center;
+  position: relative;
 
   & > a {
     height: 60px;
@@ -26,6 +27,7 @@ const StyledLogos = styled.div`
     justify-content: center;
     align-items: center;
     transition: 200ms transform ease;
+    text-decoration: none;
     :hover {
       transform: scale(1.05);
       transition: 200ms transform ease;
@@ -35,16 +37,36 @@ const StyledLogos = styled.div`
 const StyledImage = styled.img`
   width: 34px;
 `
+const Banner = styled.div`
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 100%;
+  justify-content: center;
+  align-items: center;
+  & > p {
+    grid-column: 1;
+    grid-row: 1;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: 0 auto;
+    z-index: 1;
+    font-size: 12px;
+    font-weight: 500;
+  }
+  & > img {
+    grid-column: 1;
+    grid-row: 1;
+    filter: saturate(0) brightness(3);
+    opacity: 0.5;
+    margin: auto;
+    z-index: 0;
+  }
+`
 
 const ProviderLogos = props => (
   <StyledLogos>
-    <a
-      href="https://podcasts.apple.com/de/podcast/id1485252076"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <img src={apple} alt="apple logo"></img>
-    </a>
     <a
       href="https://open.spotify.com/show/6Fe93skKJuVnpnAbRZpVGS"
       target="_blank"
@@ -70,11 +92,25 @@ const ProviderLogos = props => (
       <img src={soundcloud} alt="soundcloud logo"></img>
     </a>
     <a
-      href="https://overcast.fm/itunes1485252076"
-      target="_blank"
-      rel="noopener noreferrer"
+
+    // href="https://podcasts.apple.com/de/podcast/id1485252076"
+    // target="_blank"
+    // rel="noopener noreferrer"
     >
-      <img src={overcast} alt="overcast logo"></img>
+      <Banner>
+        <img src={apple} alt="apple logo" />
+        <p>Coming soon</p>
+      </Banner>
+    </a>
+    <a
+    // href="https://overcast.fm/itunes1485252076"
+    // target="_blank"
+    // rel="noopener noreferrer"
+    >
+      <Banner>
+        <img src={overcast} alt="overcast logo"></img>
+        <p>Coming soon</p>
+      </Banner>
     </a>
   </StyledLogos>
 )
