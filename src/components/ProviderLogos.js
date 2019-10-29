@@ -38,7 +38,11 @@ const StyledImage = styled.img`
 
 const ProviderLogos = props => (
   <StyledLogos>
-    <a href="/" target="_blank" rel="noopener noreferrer">
+    <a
+      href="https://podcasts.apple.com/de/podcast/id1485252076"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       <img src={apple} alt="apple logo"></img>
     </a>
     <a
@@ -65,7 +69,11 @@ const ProviderLogos = props => (
     >
       <img src={soundcloud} alt="soundcloud logo"></img>
     </a>
-    <a href="/" target="_blank" rel="noopener noreferrer">
+    <a
+      href="https://overcast.fm/itunes1485252076"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       <img src={overcast} alt="overcast logo"></img>
     </a>
   </StyledLogos>
