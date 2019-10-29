@@ -170,7 +170,7 @@
 .podcast-player .main-player {
   display: grid;
   grid-template-columns: 70px 1fr;
-  grid-template-rows: 100px;
+  grid-template-rows: 60px 20px;
   align-items: center;
 }
 .podcast-player .main-player .controls {
@@ -180,10 +180,13 @@
 .podcast-player .main-player .controls-advanced {
   grid-column: 1;
   grid-row: 2;
-  font-size: 16px;
+}
+.podcast-player .main-player .controls-advanced button {
+  font-size: 20px;
 }
 
 .podcast-player .progress-bar {
-  grid-column: 1;
+  grid-column: 2;
   grid-row: 1;
+  padding-top: 10px;
 }
