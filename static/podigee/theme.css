@@ -592,8 +592,8 @@ script.podlove-subscribe-button {
 
 .podcast-player {
   color: #252525;
-  font-family: "TabletGothic", "Helvetica Neue", Helvetica, Arial, FreeSans,
-    sans-serif;
+  /* font-family: "TabletGothic", "Helvetica Neue", Helvetica, Arial, FreeSans,
+    sans-serif; */
 }
 .podcast-player button {
   background: transparent;
@@ -703,7 +703,7 @@ script.podlove-subscribe-button {
   background-color: rgba(0, 0, 0, 0.3);
 }
 .podcast-player .progress-bar-buffering {
-  background-color: red;
+  background-color: #7000c054;
 }
 .podcast-player .progress-bar-buffering:after {
   animation: move 2s linear infinite;
