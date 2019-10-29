@@ -675,7 +675,7 @@ script.podlove-subscribe-button {
 }
 .podcast-player .progress-bar-played,
 .podcast-player .progress-bar-loaded {
-  background-color: #252525;
+  background-color: none;
   border-radius: 10px;
   display: block;
   height: 100%;
@@ -684,7 +684,7 @@ script.podlove-subscribe-button {
   width: 0;
 }
 .podcast-player .progress-bar-played:after {
-  background-color: #252525;
+  background-color: none;
   border-radius: 50px;
   content: "";
   height: 16px;
