@@ -49,7 +49,10 @@ const EpisodeLink = props => (
     <PlayerContainer>
       <Img sizes={props.image.sizes} alt={props.image.description} />
       <div></div>
-      <PodigeePlayer theme="minimal" source={props.podcastSlug}></PodigeePlayer>
+      <PodigeePlayer
+        theme="american"
+        source={props.podcastSlug}
+      ></PodigeePlayer>
     </PlayerContainer>
     <p>{props.excerpt}</p>
     <StyledLink to={props.slug}>Tell me more</StyledLink>
