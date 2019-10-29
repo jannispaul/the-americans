@@ -587,7 +587,7 @@ script.podlove-subscribe-button {
   font-style: normal; } */
 
 .loading-animation .spinner > div {
-  background-color: #313131 !important;
+  /* background-color: #313131 !important; */
 }
 
 .podcast-player {
@@ -603,7 +603,7 @@ script.podlove-subscribe-button {
 }
 .podcast-player button.play-button {
   border: none;
-  color: transparent;
+  color: #7000c0;
   height: 60px;
   margin: 0;
   padding: 0;
@@ -675,7 +675,7 @@ script.podlove-subscribe-button {
 }
 .podcast-player .progress-bar-played,
 .podcast-player .progress-bar-loaded {
-  background-color: none;
+  background-color: #7000c0;
   border-radius: 10px;
   display: block;
   height: 100%;
@@ -684,7 +684,7 @@ script.podlove-subscribe-button {
   width: 0;
 }
 .podcast-player .progress-bar-played:after {
-  background-color: none;
+  background-color: #7000c0;
   border-radius: 50px;
   content: "";
   height: 16px;
@@ -755,4 +755,24 @@ script.podlove-subscribe-button {
 .podcast-player .panels .transcript .transcript-text li.active > *,
 .podcast-player .panels .transcript .transcript-text li.search-highlight > * {
   color: #1b1b1b;
+}
+
+.main-player {
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  grid-template-rows: 100px;
+  align-items: center;
+}
+.controls {
+  grid-column: 1;
+  grid-row: 1;
+}
+.controls-advanced {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.podcast-player .progress-bar {
+  grid-column: 1;
+  grid-row: 1;
 }
