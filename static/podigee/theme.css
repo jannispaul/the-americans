@@ -739,3 +739,20 @@ script.podlove-subscribe-button {
     background-position: 50px 50px;
   }
 }
+
+.podcast-player .panels .chaptermarks ul li.active,
+.podcast-player .panels .chaptermarks ul li:hover,
+.podcast-player .panels .playlist ul li.active,
+.podcast-player .panels .playlist ul li:hover {
+  color: #1b1b1b;
+}
+
+.podcast-player .panels .share .share-copy-url {
+  color: #c8c8c8;
+}
+
+.podcast-player .panels .transcript .transcript-text li:hover > *,
+.podcast-player .panels .transcript .transcript-text li.active > *,
+.podcast-player .panels .transcript .transcript-text li.search-highlight > * {
+  color: #1b1b1b;
+}
