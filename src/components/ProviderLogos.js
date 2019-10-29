@@ -58,8 +58,8 @@ const Banner = styled.div`
   & > img {
     grid-column: 1;
     grid-row: 1;
-    filter: saturate(0) brightness(3);
-    opacity: 0.5;
+    filter: grayscale(1);
+    opacity: 0.2;
     margin: auto;
     z-index: 0;
   }
