@@ -208,3 +208,11 @@
   grid-column: 2;
   top: 0;
 }
+@media (max-width: 424px) {
+  .podcast-player .progress-bar {
+    grid-template-columns: 100%;
+  }
+  .podcast-player .progress-bar .progress-bar-time-played {
+    display: none;
+  }
+}
