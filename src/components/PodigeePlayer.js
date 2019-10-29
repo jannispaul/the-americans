@@ -21,8 +21,8 @@ class StaticPodigeePlayer extends React.Component {
       options: {
         // theme: `${this.props.theme}`,
         theme: {
-          html: "https://the-americans.com/podigee/theme.html",
-          css: `https://the-americans.com/podigee/theme.css`,
+          html: "https://the-americans.com/podigee/index.html",
+          css: `https://the-americans.com/podigee/index.css`,
         },
       },
     })
