@@ -55,6 +55,7 @@
   /* position: relative; */
   top: -12px;
   width: calc(100% - 84px);
+  padding-left: 10px;
 }
 
 .podcast-player .progress-bar .progress-bar-rail {
