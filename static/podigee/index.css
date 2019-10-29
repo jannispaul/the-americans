@@ -52,7 +52,7 @@
 .podcast-player .progress-bar {
   display: inline-block;
   left: 20px;
-  position: relative;
+  /* position: relative; */
   top: -12px;
   width: calc(100% - 84px);
 }
