@@ -53,7 +53,10 @@ export default () => (
   <StaticQuery
     query={graphql`
       query LatestEpisodesQuery {
-        allContentfulPodcast(limit: 3) {
+        allContentfulPodcast(
+          sort: { order: DESC, fields: createdAt }
+          limit: 3
+        ) {
           edges {
             node {
               podcastSlug
