@@ -38,9 +38,10 @@ function SEO({
   )
 
   const metaDescription = description || site.siteMetadata.description
-  const ogImageUrl = ogimage || defaultOpenGraphImage
-  // const ogImageUrl =
-  //   site.siteMetadata.siteUrl + (ogimage || defaultOpenGraphImage)
+  // const ogImageUrl = ogimage || defaultOpenGraphImage
+  const ogImageUrl =
+    site.siteMetadata.siteUrl + (ogimage || defaultOpenGraphImage)
+  // "https://the-americans.com/" + (ogimage || defaultOpenGraphImage)
   // const keywords = site.siteMetadata.keywords
 
   return (
@@ -89,15 +90,15 @@ function SEO({
         },
         {
           name: `twitter:image`,
-          content: `${siteUrl}${ogImageUrl}`,
+          content: `${ogImageUrl}`,
         },
         {
           property: `og:image`,
-          content: `${siteUrl}${ogImageUrl}`,
+          content: `${ogImageUrl}`,
         },
         {
           itemprop: `image`,
-          content: `${siteUrl}${ogImageUrl}`,
+          content: `${ogImageUrl}`,
         },
       ]
         .concat(
