@@ -218,7 +218,7 @@ const EpisodeTemplate = ({ data: { podcast, ogimage, site }, location }) => {
             </StyledIcon>
           </a>
           <a
-            href={`https://twitter.com/intent/tweet?text=${podcast.title} – Listen to The Americans podcast: ${site.siteMetadata.siteUrl}${location.pathname}`}
+            href={`https://twitter.com/intent/tweet?text=Listen to The Americans podcast: ${site.siteMetadata.siteUrl}${location.pathname}`}
             target="_blank"
             rel="noopener noreferrer"
           >
