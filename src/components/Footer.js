@@ -64,7 +64,7 @@ const Footer = props => (
           href="https://mediapioneer.com/impressum/"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Link zum Datenschutz"
+          aria-label="Link zum Impressum"
         >
           Impressum
         </a>
@@ -72,7 +72,7 @@ const Footer = props => (
           href="https://mediapioneer.com/datenschutz/"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Link zum Impressum"
+          aria-label="Link zum Datenschutz"
         >
           Datenschutz
         </a>
