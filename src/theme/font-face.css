@@ -14,7 +14,7 @@
   font-weight: 400;
   font-display: swap;
   src: local("Open Sans Regular"), local("OpenSans-Regular"),
-    url("/static/fonts/OpenSans-Regular.woff2") format("woff2");
+    url("fonts/OpenSans-Regular.woff2") format("woff2");
 }
 /* latin-ext */
 /* @font-face {
