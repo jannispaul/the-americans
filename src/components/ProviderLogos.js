@@ -68,6 +68,13 @@ const Banner = styled.div`
 const ProviderLogos = props => (
   <StyledLogos>
     <a
+      href="https://podcasts.apple.com/de/podcast/id1485252076"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <img src={apple} alt="apple logo" />
+    </a>
+    <a
       href="https://open.spotify.com/show/6Fe93skKJuVnpnAbRZpVGS"
       target="_blank"
       rel="noopener noreferrer"
@@ -81,7 +88,11 @@ const ProviderLogos = props => (
     >
       <img src={deezer} alt="deezer logo"></img>
     </a>
-    <a href="/" target="_blank" rel="noopener noreferrer">
+    <a
+      href="https://earli.page.link/N5R3"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       <StyledImage src={earliaudio} alt="earliaudio logo"></StyledImage>
     </a>
     <a
@@ -90,17 +101,6 @@ const ProviderLogos = props => (
       rel="noopener noreferrer"
     >
       <img src={soundcloud} alt="soundcloud logo"></img>
-    </a>
-    <a
-
-    // href="https://podcasts.apple.com/de/podcast/id1485252076"
-    // target="_blank"
-    // rel="noopener noreferrer"
-    >
-      <Banner>
-        <img src={apple} alt="apple logo" />
-        <p>Coming soon</p>
-      </Banner>
     </a>
     <a
     // href="https://overcast.fm/itunes1485252076"
