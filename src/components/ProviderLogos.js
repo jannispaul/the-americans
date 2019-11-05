@@ -7,6 +7,7 @@ import earliaudio from "../content/images/providers/earliaudio.png"
 import soundcloud from "../content/images/providers/soundcloud.svg"
 import deezer from "../content/images/providers/deezer.svg"
 // import { device } from "../theme/breakpoints"
+import RSSButton from "./RSSButton"
 
 const StyledLogos = styled.div`
   margin-top: 32px;
@@ -14,12 +15,12 @@ const StyledLogos = styled.div`
   width: 100%;
   display: grid;
   grid-template-columns: repeat(3, minmax(100px, 1fr));
+  grid-template-rows: 60px 60px 30px;
   grid-gap: 10px;
   justify-content: center;
   position: relative;
 
   & > a {
-    height: 60px;
     background: white;
     border-radius: 5px;
     box-shadow: 0 1px 14px 10px rgba(174, 174, 174, 0.12);
@@ -109,6 +110,7 @@ const ProviderLogos = props => (
     >
       <img src={overcast} alt="overcast logo"></img>
     </a>
+    <RSSButton></RSSButton>
   </StyledLogos>
 )
 export default ProviderLogos
