@@ -10,7 +10,7 @@ const StyledButton = styled(Link)`
   font-size: 18px;
   color: #eb003f;
   border: 3px solid #eb003f;
-  border-radius: 7.2px;
+  border-radius: 7px;
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
