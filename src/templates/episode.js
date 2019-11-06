@@ -156,7 +156,7 @@ const EpisodeTemplate = ({ data: { podcast, ogimage, site }, location }) => {
     <Layout>
       <SEO
         title={podcast.title}
-        // ogimage={ogimage.edges[0].node.resize.src}
+        ogimage={ogimage.edges[0].node.resize.src}
         description={podcast.description.description}
       />
       <StyledHero>
