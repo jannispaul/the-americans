@@ -15,3 +15,21 @@
     Your site is now running at `http://localhost:8000`!
 
     _Check GraphQL here: _`http://localhost:8000/___graphql`_. 
+
+3.  **Run in production mode**
+
+```sh
+gatsby build && gatsby serve
+```
+
+4.  **See outdated packages**
+
+```sh
+npm outdated
+```
+
+5.  **Update packages**
+
+```sh
+npm run upgrade-interactive
+```
