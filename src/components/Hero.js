@@ -58,8 +58,8 @@ const Hero = props => (
         <p>
           This podcast is about today’s America. It takes a closer look at
           politics and society, and has a special focus on people and their
-          stories – stories that give you an up-close, personal and
-          differentiated look at America.
+          stories – stories that give you an up-close, personal and nuanced look
+          at America.
         </p>
 
         <ProviderLogos></ProviderLogos>
