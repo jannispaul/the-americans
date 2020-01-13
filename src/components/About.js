@@ -91,8 +91,9 @@ const About = props => (
       </StyledHeadline>
       <p>
         As an American living in Germany for over a decade, Chelsea Spieker has
-        a unique view on her home country: one that gives you an inside and an
-        outside perspective on what moves people in the United States.
+        a unique view of her home country. Join Chelsea as she brings you an
+        inside and outside perspective on issues of relevance to the people of
+        the United States.
       </p>
       <SocialContainer>
         Follow:
