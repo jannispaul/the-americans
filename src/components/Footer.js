@@ -51,6 +51,9 @@ const StyledFooter = styled.footer`
     }
   }
 
+  span {
+    opacity: 0.8;
+  }
   /*Links in footer*/
   a {
     margin-right: 10px;
