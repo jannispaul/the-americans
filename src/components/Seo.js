@@ -54,7 +54,7 @@ function SEO({
       meta={[
         {
           name: `robots`,
-          content: index,
+          content: noindex,
         },
         {
           name: `description`,
